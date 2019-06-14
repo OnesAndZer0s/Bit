@@ -22,8 +22,34 @@
 <script>
   var blocklyArea = document.getElementById('blocklyArea');
   var blocklyDiv = document.getElementById('blocklyDiv');
-  var workspace = Blockly.inject(blocklyDiv,
-      {toolbox: document.getElementById('toolbox')});
+  var workspace = Blockly.inject(blocklyDiv,{
+  toolbox: document.getElementById('toolbox'),
+  collapse : false, 
+	comments : true, 
+	disable : true, 
+	maxBlocks : Infinity, 
+	trashcan : true, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	scrollbars : true, 
+	sounds : true, 
+	oneBasedIndex : true, 
+	grid : {
+		spacing : 20, 
+		length : 1, 
+		colour : '#888', 
+		snap : false
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : false, 
+		startScale : 1, 
+		maxScale : 1.5, 
+		minScale : 0.2, 
+		scaleSpeed : 1.2
+	}
+};});
   var onresize = function(e) {
     // Compute the absolute coordinates and dimensions of blocklyArea.
     var element = blocklyArea;
