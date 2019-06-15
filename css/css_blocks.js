@@ -1,52 +1,19 @@
 Blockly.Blocks['css_block'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldNumber(1, 1, 50), "numSelect");
-    this.appendValueInput("selector_1")
+        .appendField("selectors");
+    this.appendStatementInput("selectors")
         .setCheck("selector");
+    this.appendDummyInput()
+        .appendField("declarations");
     this.appendStatementInput("declarations")
         .setCheck("declaration");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, "css");
-    this.setNextStatement(true, "css");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
-  },
-  findSelectors_ : function() {
-  var i = 0;
-    while (this.getInput('selector_' + (i+1) ) !== null) {
-i++
-    }
-  return i;
-},
-  
-  mutationToDom: function() {
-      console.log("MUTATION TO DOM")
-var container = document.createElement('mutation');
-     var newNum = Number(this.getFieldValue('numSelect')), 
-         oldNum = this.findSelectors_(),
-         arr = [];
-    if (newNum !== oldNum) {
-if (newNum>oldNum) {
-   for (var i = 0; i < newNum-oldNum; i++) {
-    this.appendValueInput('selector_'+(oldNum+i+1) );
-   this.moveInputBefore('selector_'+(oldNum+i+1), 'declarations');
-    }
   }
-  if (newNum<oldNum) {
-for (var i = 0; i < oldNum-newNum; i++) {
-    this.removeInput('selector_'+(oldNum-i) );
-    }
-}
-  }
-container.setAttribute('items', 1);
-return container;
-},
-  domToMutation: function(xmlElement) {
-console.log("DOM TO MUTATION")
-}
-  
 };
 
 
