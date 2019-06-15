@@ -12,20 +12,8 @@ Blockly.Blocks['css_block'] = {
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
-},
-mutationToDom: function() {
-  var container = document.createElement('mutation');
-  var newNum = this.getFieldValue('numSelect'),
-      oldNum = 0;
-  while (this.getFieldValue('selector_'+(oldNum+1) ) !==  undefined) {
-oldNum++
-  }
-  console.log(oldNum,newNum)
-  return container;
-},
-  domToMutation: function(xmlElement) {
-console.log("DOMTOMUT")
 }
+
 };
 
 Blockly.JavaScript['css_block'] = function(block) {
@@ -44,3 +32,21 @@ return "console.log('YEET');";
 //Blockly.JavaScript.valueToCode(block, 'FROM', Blockly.JavaScript.ORDER_ADDITION) || '0'
 //https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks#label
 };
+
+
+
+Blockly.Extensions.registerMutator('css_block_select',
+  mutationToDom: function() {
+  var container = document.createElement('mutation');
+  var newNum = this.getFieldValue('numSelect'),
+      oldNum = 0;
+  while (this.getFieldValue('selector_'+(oldNum+1) ) !==  undefined) {
+oldNum++
+  }
+  console.log(oldNum,newNum)
+  return container;
+},
+  domToMutation: function(xmlElement) {
+console.log("DOMTOMUT")
+},
+  null, null);
