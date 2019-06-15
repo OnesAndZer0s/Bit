@@ -1,5 +1,5 @@
 Blockly.Blocks['css_block'] = {
-  init() {
+  init: function() {
     this.appendDummyInput()
         .appendField(new Blockly.FieldNumber(1, 1, 50), "numSelect");
     this.appendValueInput("selector_1")
@@ -24,7 +24,7 @@ i++
   mutationToDom: function() {
       var container = document.createElement('mutation');
      var newNum = this.getFieldValue('numSelect'), 
-         oldNum = findSelectors_(),
+         oldNum = this.findSelectors_(),
          arr = [];
     console.log([oldNum,newNum]);
     if (newNum<oldNum) {
