@@ -15,7 +15,7 @@ Blockly.Blocks['css_block'] = {
   },
   findSelectors_ : function() {
   var i = 0;
-    while (this.getInput('selector_' + (i+1) ) !== null)) {
+    while (this.getInput('selector_' + (i+1) ) !== null) {
 i++
     }
   return i;
