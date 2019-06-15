@@ -14,7 +14,9 @@ Blockly.Blocks['css_block'] = {
  this.setHelpUrl("");
   },
   mutationToDom: function() {
-console.log("MUTTODOM")
+  var select = this.getFieldValue('numSelect'), arr = [];
+    
+  console.log(select);
 },
   domToMutation: function(xmlElement) {
 console.log("DOMTOMUT")
