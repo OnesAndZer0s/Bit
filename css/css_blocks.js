@@ -14,3 +14,19 @@ Blockly.Blocks['css_block'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.JavaScript['css_block'] = function(block) {
+var selec = block.getFieldValue('numSelect'), arr = [];
+for (var i = 0; i < selec; i++) {
+arr.push(block.getFieldValue('selector_'+(i+1) ));
+}
+console.log(arr);
+
+return arr
+//should return (SELECTORS) \n{ (DECLARATIONS) \n}
+  
+  
+// may be useful
+//Blockly.JavaScript.valueToCode(block, 'FROM', Blockly.JavaScript.ORDER_ADDITION) || '0'
+//https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks#label
+};
