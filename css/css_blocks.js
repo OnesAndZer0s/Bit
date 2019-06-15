@@ -13,19 +13,37 @@ Blockly.Blocks['css_block'] = {
  this.setTooltip("");
  this.setHelpUrl("");
   },
+  findSelectors_ : function() {
+  var i = 0;
+    while (this.getInput('selector_' + (i+1) ) !== null)) {
+i++
+    }
+  return i;
+},
+  
   mutationToDom: function() {
       var container = document.createElement('mutation');
-     var select = this.getFieldValue('numSelect'), arr = [];
-    for (var i = 0; i < select; i++) {
-    this.appendValueInput('selector');
+     var newNum = this.getFieldValue('numSelect'), 
+         oldNum = findSelectors_(),
+         arr = [];
+    console.log([oldNum,newNum]);
+    if (newNum<oldNum) {
+   for (var i = 0; i < newNum-oldNum; i++) {
+    this.appendValueInput('selector_'+(i+1) );
     }
-  console.log(select);
-container.setAttribute('items', select);
+  }
+  if (newNum>oldNum) {
+for (var i = 0; i < newNum-oldNum; i++) {
+    this.removeInput('selector_'+(i+1) );
+    }
+}
+container.setAttribute('items', 1);
 return container;
 },
   domToMutation: function(xmlElement) {
 console.log("DOMTOMUT")
 }
+  
 };
 
 
