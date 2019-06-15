@@ -29,7 +29,7 @@ Blockly.defineBlocksWithJsonArray([
   "nextStatement": "css",
   "colour": 45,
   "tooltip": "",
-  "mutator":"css_block_select"
+  "mutator":"css_block_select",
   "helpUrl": ""
 }
 ]);
