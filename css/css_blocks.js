@@ -23,7 +23,7 @@ arr.push(block.getFieldValue('selector_'+(i+1) ));
   //remove all NULL from list
 console.log(arr);
 
-return arr.length
+return "console.log('YEET');";
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
   
   
