@@ -1,20 +1,37 @@
-Blockly.Blocks['css_block'] = {
-  init() {
-    this.appendDummyInput()
-        .appendField(new Blockly.FieldNumber(1, 1, 50), "numSelect");
-    this.appendValueInput("selector_1")
-        .setCheck("selector");
-    this.appendStatementInput("declarations")
-        .setCheck("declaration");
-    this.setInputsInline(true);
-    this.setPreviousStatement(true, "css");
-    this.setNextStatement(true, "css");
-    this.setColour(45);
- this.setTooltip("");
- this.setHelpUrl("");
+Blockly.defineBlocksWithJSONArray([
+{
+  "type": "css_block",
+  "message0": "%1 %2 %3 %4",
+  "args0": [
+    {
+      "type": "field_number",
+      "name": "numSelect",
+      "value": 1,
+      "min": 1,
+      "max": 50
+    },
+    {
+      "type": "input_dummy"
+    },
+    {
+      "type": "input_value",
+      "name": "selector_1",
+      "check": "selector"
+    },
+    {
+      "type": "input_statement",
+      "name": "declarations",
+      "check": "declaration"
+    }
+  ],
+  "inputsInline": true,
+  "previousStatement": "css",
+  "nextStatement": "css",
+  "colour": 45,
+  "tooltip": "",
+  "helpUrl": ""
 }
-
-};
+]);
 
 Blockly.JavaScript['css_block'] = function(block) {
 var selec = block.getFieldValue('numSelect'), arr = [];
