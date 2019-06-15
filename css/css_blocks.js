@@ -12,6 +12,7 @@ Blockly.Blocks['css_block'] = {
     this.setColour(45);
  this.setTooltip("");
  this.setHelpUrl("");
+ this.setMutator("css_block_select");
   }
 };
 
