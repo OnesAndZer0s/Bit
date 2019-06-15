@@ -15,7 +15,7 @@ Blockly.Blocks['css_block'] = {
   },
   findSelectors_ : function() {
   var i = 0;
-    while (this.getInput('selector_' + (i+2) ) !== null) {
+    while (this.getInput('selector_' + (i+1) ) !== null) {
 i++
     }
   return i;
@@ -29,7 +29,7 @@ i++
     console.log([oldNum,newNum]); 
     if (newNum>oldNum) {
    for (var i = 0; i < newNum-oldNum; i++) {
-    this.appendValueInput('selector_'+(i+1) );
+    this.appendValueInput('selector_'+(i+2) );
     }
   }
   if (newNum<oldNum) {
