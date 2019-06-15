@@ -55,16 +55,9 @@ return "console.log('YEET');";
 
 Blockly.Extensions.registerMutator('css_block_select',{
   mutationToDom: function() {
-  var container = document.createElement('mutation');
-  var newNum = this.getFieldValue('numSelect'),
-      oldNum = 0;
-  while (this.getFieldValue('selector_'+(oldNum+1) ) !==  undefined) {
-oldNum++
-  }
-  console.log(oldNum,newNum)
-  return container;
 },
   domToMutation: function(xmlElement) {
 console.log("DOMTOMUT")
-}},
+}
+},
   null, null);
