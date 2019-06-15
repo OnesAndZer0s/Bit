@@ -29,6 +29,7 @@ Blockly.defineBlocksWithJSONArray([
   "nextStatement": "css",
   "colour": 45,
   "tooltip": "",
+  "mutator","css_block_select"
   "helpUrl": ""
 }
 ]);
