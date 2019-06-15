@@ -31,3 +31,24 @@ return arr.length
 //Blockly.JavaScript.valueToCode(block, 'FROM', Blockly.JavaScript.ORDER_ADDITION) || '0'
 //https://developers.google.com/blockly/guides/create-custom-blocks/define-blocks#label
 };
+
+Blockly.Extensions.registerMutator('css_block_select',
+{
+mutationToDom: function() {
+  var container = document.createElement('mutation');
+  var newNum = this.getFieldValue('numSelect'),
+      oldNum = 0;
+  while (this.getFieldValue('selector_'+(oldNum+1) ) !==  undefined) {
+oldNum++
+  }
+  console.log(oldNum,newNum)
+  return container;
+},
+  
+domToMutation: function(xmlElement) {
+  var hasDivisorInput = (xmlElement.getAttribute('divisor_input') == 'true');
+  this.updateShape_(hasDivisorInput);  // Helper function for adding/removing 2nd input.
+}
+
+}, 
+null, null);
