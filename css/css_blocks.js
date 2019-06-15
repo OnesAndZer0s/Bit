@@ -29,12 +29,12 @@ i++
     console.log([oldNum,newNum]); 
     if (newNum>oldNum) {
    for (var i = 0; i < newNum-oldNum; i++) {
-    this.appendValueInput('selector_'+(i+2) );
+    this.appendValueInput('selector_'+(i+1) );
     }
   }
   if (newNum<oldNum) {
 for (var i = 0; i < oldNum-newNum; i++) {
-    this.removeInput('selector_'+(oldNum+newNum-i-2) );
+    this.removeInput('selector_'+(oldNum+newNum-i-1) );
     }
 }
 container.setAttribute('items', 1);
