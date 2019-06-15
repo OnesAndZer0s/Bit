@@ -34,7 +34,7 @@ i++
   }
   if (newNum<oldNum) {
 for (var i = 0; i < oldNum-newNum; i++) {
-    this.removeInput('selector_'+(i+1) );
+    this.removeInput('selector_'+(1+oldNum-newNum-i) );
     }
 }
 container.setAttribute('items', 1);
