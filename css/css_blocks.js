@@ -14,9 +14,14 @@ Blockly.Blocks['css_block'] = {
  this.setHelpUrl("");
   },
   mutationToDom: function() {
-  var select = this.getFieldValue('numSelect'), arr = [];
+      var container = document.createElement('mutation');
+     var select = this.getFieldValue('numSelect'), arr = [];
+    for (var i = 0; i < select; i++) {
     
+    }
   console.log(select);
+container.setAttribute('items', select);
+return container;
 },
   domToMutation: function(xmlElement) {
 console.log("DOMTOMUT")
