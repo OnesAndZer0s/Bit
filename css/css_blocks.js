@@ -23,17 +23,17 @@ i++
   
   mutationToDom: function() {
       var container = document.createElement('mutation');
-     var newNum = this.getFieldValue('numSelect'), 
+     var newNum = Number(this.getFieldValue('numSelect')), 
          oldNum = this.findSelectors_(),
          arr = [];
     console.log([oldNum,newNum]);
-    if (newNum<oldNum) {
+    if (newNum>oldNum) {
    for (var i = 0; i < newNum-oldNum; i++) {
     this.appendValueInput('selector_'+(i+1) );
     }
   }
-  if (newNum>oldNum) {
-for (var i = 0; i < newNum-oldNum; i++) {
+  if (newNum<oldNum) {
+for (var i = 0; i < oldNum-newNum; i++) {
     this.removeInput('selector_'+(i+1) );
     }
 }
