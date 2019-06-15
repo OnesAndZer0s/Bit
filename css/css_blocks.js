@@ -20,9 +20,10 @@ var selec = block.getFieldValue('numSelect'), arr = [];
 for (var i = 0; i < selec; i++) {
 arr.push(block.getFieldValue('selector_'+(i+1) ));
 }
+  //remove all NULL from list
 console.log(arr);
 
-return arr
+return arr.length
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
   
   
