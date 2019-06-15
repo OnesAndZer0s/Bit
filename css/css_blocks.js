@@ -22,11 +22,13 @@ i++
 },
   
   mutationToDom: function() {
-      var container = document.createElement('mutation');
+      console.log("MUTATION TO DOM")
+var container = document.createElement('mutation');
      var newNum = Number(this.getFieldValue('numSelect')), 
          oldNum = this.findSelectors_(),
          arr = [];
-    if (newNum>oldNum) {
+    if (newNum !== oldNum) {
+if (newNum>oldNum) {
    for (var i = 0; i < newNum-oldNum; i++) {
     this.appendValueInput('selector_'+(oldNum+i+1) );
    this.moveInputBefore('selector_'+(oldNum+i+1), 'declarations');
@@ -37,11 +39,12 @@ for (var i = 0; i < oldNum-newNum; i++) {
     this.removeInput('selector_'+(oldNum-i) );
     }
 }
+  }
 container.setAttribute('items', 1);
 return container;
 },
   domToMutation: function(xmlElement) {
-console.log("DOMTOMUT")
+console.log("DOM TO MUTATION")
 }
   
 };
