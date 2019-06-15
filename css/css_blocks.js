@@ -25,11 +25,7 @@ oldNum++
 },
   domToMutation: function(xmlElement) {
 console.log("DOMTOMUT")
-},
-  // Aux functions
-  reshape(param){
-    // Reshape your block...
-  }
+}
 };
 
 Blockly.JavaScript['css_block'] = function(block) {
