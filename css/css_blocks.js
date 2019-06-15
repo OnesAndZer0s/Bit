@@ -24,8 +24,7 @@ oldNum++
   return container;
 },
   domToMutation: function(xmlElement) {
-  var hasDivisorInput = (xmlElement.getAttribute('divisor_input') == 'true');
-  this.updateShape_(hasDivisorInput);  // Helper function for adding/removing 2nd input.
+console.log("DOMTOMUT")
 },
   // Aux functions
   reshape(param){
