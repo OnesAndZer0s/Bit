@@ -1,4 +1,4 @@
-Blockly.defineBlocksWithJSONArray([
+Blockly.defineBlocksWithJsonArray([
 {
   "type": "css_block",
   "message0": "%1 %2 %3 %4",
