@@ -29,7 +29,7 @@ i++
     if (newNum>oldNum) {
    for (var i = 0; i < newNum-oldNum; i++) {
     this.appendValueInput('selector_'+(oldNum+i+1) );
-   this.moveInputBefore('selector_'+(oldNum+i+1), 'selector_'+(oldNum+i));
+   this.moveInputBefore('selector_'+(oldNum+i+1), 'declarations');
     }
   }
   if (newNum<oldNum) {
