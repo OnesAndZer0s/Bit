@@ -17,7 +17,7 @@ Blockly.Blocks['css_block'] = {
       var container = document.createElement('mutation');
      var select = this.getFieldValue('numSelect'), arr = [];
     for (var i = 0; i < select; i++) {
-    
+    this.appendValueInput('selector');
     }
   console.log(select);
 container.setAttribute('items', select);
