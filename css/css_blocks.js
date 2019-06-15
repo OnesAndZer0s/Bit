@@ -26,7 +26,7 @@ i++
      var newNum = Number(this.getFieldValue('numSelect')), 
          oldNum = this.findSelectors_(),
          arr = [];
-    console.log([oldNum,newNum]);
+    console.log([oldNum,newNum]); 
     if (newNum>oldNum) {
    for (var i = 0; i < newNum-oldNum; i++) {
     this.appendValueInput('selector_'+(i+1) );
