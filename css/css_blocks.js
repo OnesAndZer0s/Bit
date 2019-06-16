@@ -271,8 +271,13 @@ Blockly.JavaScript['css_id_selector'] = function(block) {
 Blockly.JavaScript['css_join_selectors'] = function(block) {
   var statements_element = Blockly.JavaScript.statementToCode(block, 'element');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
-  return code;
+  var code = statements_element.split(', ');
+  if (statements_element !== '') {
+return code;
+    }
+else {
+return '';
+    }
 };
 
 Blockly.JavaScript['css_order_selectors'] = function(block) {
@@ -295,8 +300,14 @@ change = ' ~ ';
 else {
 change = ' ';
 }
-  var code = statements_element1 + change + statements_element2 + ', ';
-  return code;
+  
+var code = statements_element1 + change + statements_element2 + ', ';
+if (statements_element1 !== '' && statements_element2 !== '') {
+return code;
+    }
+else {
+return '';
+    }
 };
 
 Blockly.JavaScript['css_allelement_selectors'] = function(block) {
@@ -317,7 +328,12 @@ Blockly.JavaScript['css_not_selectors'] = function(block) {
   statements_notelement = statements_notelement.substring(2, statements_notelement.length - 2);
 // TODO: Assemble JavaScript into code variable.
   var code = ':not('+statements_notelement+'), ';
-  return code;
+if (statements_notelement !== '') {
+return code;
+    }
+else {
+return '';
+    }
 };
 
 Blockly.JavaScript['css_attribute_selectors'] = function(block) {
