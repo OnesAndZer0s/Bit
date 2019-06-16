@@ -336,7 +336,7 @@ Blockly.JavaScript['css_allelement_selectors'] = function(block) {
 Blockly.JavaScript['css_element_selectors'] = function(block) {
   var dropdown_elementdrop = block.getFieldValue('elementDrop');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = dropdown_elementdrop + ', ';
   return code;
 };
 
