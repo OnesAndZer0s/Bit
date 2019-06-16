@@ -282,12 +282,11 @@ Blockly.Blocks['css_pseudo_selectors'] = {
 
 
 Blockly.JavaScript['css_block'] = function(block) {
-var selec = block.getFieldValue('numSelect'), arr = [];
-for (var i = 0; i < selec; i++) {
-arr.push(block.getFieldValue('selector_'+(i+1) ));
-}
+//var selec = block.getFieldValue('selectors'), arr = [];
+var x = Blockly.JavaScript.statementToCode(block, 'selectors')
+
   //remove all NULL from list
-console.log(arr);
+console.log(x);
 
 return "console.log('YEET');";
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
@@ -330,7 +329,7 @@ Blockly.JavaScript['css_descendant_selectors'] = function(block) {
 
 Blockly.JavaScript['css_allelement_selectors'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '*';
   return code;
 };
 
