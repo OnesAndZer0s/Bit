@@ -285,7 +285,7 @@ Blockly.JavaScript['css_block'] = function(block) {
 //var selec = block.getFieldValue('selectors'), arr = [];
 var selec = Blockly.JavaScript.statementToCode(block, 'selectors')
 console.log(selec);
-if (selec == null) {
+if (selec == '') {
 selec = '*'
 } else {
 selec = selec.substring(2, selec.length - 2);
