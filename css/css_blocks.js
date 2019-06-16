@@ -315,7 +315,7 @@ Blockly.JavaScript['css_element_selectors'] = function(block) {
 Blockly.JavaScript['css_not_selectors'] = function(block) {
   var statements_notelement = Blockly.JavaScript.statementToCode(block, 'notElement');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = ':not('+statements_notelement+'), ';
   return code;
 };
 
