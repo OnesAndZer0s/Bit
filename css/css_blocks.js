@@ -284,13 +284,13 @@ statements_element2 = statements_element2.substring(2, statements_element2.lengt
 var change;
   
 if (dropdown_typedrop == 'parent') {
-change = '>';
+change = ' > ';
 }
 else if (dropdown_typedrop == 'after') {
-change = '+';
+change = ' + ';
 }
 else if (dropdown_typedrop == 'preceded') {
-change = '~';       
+change = ' ~ ';       
 }
 else {
 change = ' ';
