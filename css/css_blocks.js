@@ -1,3 +1,6 @@
+var elementDrop = [['elementName','ELEMENT'],['aa','bb']];
+
+
 Blockly.Blocks['css_block'] = {
   init: function() {
     this.appendDummyInput()
@@ -88,7 +91,7 @@ Blockly.Blocks['css_element_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("element")
-        .appendField(new Blockly.FieldDropdown([["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"]]), "elementDrop");
+        .appendField(new Blockly.FieldDropdown(...elementDrop), "elementDrop");
     this.setPreviousStatement(true, "selector");
     this.setNextStatement(true, "selector");
     this.setColour(345);
