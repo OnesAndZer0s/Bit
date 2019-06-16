@@ -59,12 +59,12 @@ Blockly.Blocks['css_join_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_descendant_selectors'] = {
+Blockly.Blocks['css_order_selectors'] = {
   init: function() {
     this.appendStatementInput("element1")
         .setCheck("selector");
     this.appendDummyInput()
-        .appendField("in");
+        .appendField(new Blockly.FieldDropdown([["in","in"], ["with parent","parent"], ["immediately after","after"], ["preceded by","preceded"]]), "typeDrop");
     this.appendStatementInput("element2")
         .setCheck("selector");
     this.setPreviousStatement(true, "selector");
@@ -92,54 +92,6 @@ Blockly.Blocks['css_element_selectors'] = {
     this.appendDummyInput()
         .appendField("element")
         .appendField(new Blockly.FieldDropdown(elementDrop), "elementDrop");
-    this.setPreviousStatement(true, "selector");
-    this.setNextStatement(true, "selector");
-    this.setColour(345);
- this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['css_parent_selectors'] = {
-  init: function() {
-    this.appendStatementInput("element1")
-        .setCheck("selector");
-    this.appendDummyInput()
-        .appendField("with parent");
-    this.appendStatementInput("element2")
-        .setCheck("selector");
-    this.setPreviousStatement(true, "selector");
-    this.setNextStatement(true, "selector");
-    this.setColour(345);
- this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['css_after_selectors'] = {
-  init: function() {
-    this.appendStatementInput("element1")
-        .setCheck("selector");
-    this.appendDummyInput()
-        .appendField("immediately after");
-    this.appendStatementInput("element2")
-        .setCheck("selector");
-    this.setPreviousStatement(true, "selector");
-    this.setNextStatement(true, "selector");
-    this.setColour(345);
- this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.Blocks['css_preceded_selectors'] = {
-  init: function() {
-    this.appendStatementInput("element1")
-        .setCheck("selector");
-    this.appendDummyInput()
-        .appendField("preceded by");
-    this.appendStatementInput("element2")
-        .setCheck("selector");
     this.setPreviousStatement(true, "selector");
     this.setNextStatement(true, "selector");
     this.setColour(345);
@@ -323,7 +275,7 @@ Blockly.JavaScript['css_join_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_descendant_selectors'] = function(block) {
+Blockly.JavaScript['css_order_selectors'] = function(block) {
   var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
   var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
 statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
@@ -343,36 +295,6 @@ Blockly.JavaScript['css_element_selectors'] = function(block) {
   var dropdown_elementdrop = block.getFieldValue('elementDrop');
   // TODO: Assemble JavaScript into code variable.
   var code = dropdown_elementdrop + ', ';
-  return code;
-};
-
-Blockly.JavaScript['css_parent_selectors'] = function(block) {
-  var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
-  var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
-statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
-statements_element2 = statements_element2.substring(2, statements_element2.length - 2);
-
-  var code = statements_element1 + ' > ' + statements_element2 + ', ';
-  return code;
-};
-
-Blockly.JavaScript['css_after_selectors'] = function(block) {
-  var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
-  var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
-statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
-statements_element2 = statements_element2.substring(2, statements_element2.length - 2);
-
-  var code = statements_element1 + ' + ' + statements_element2 + ', ';
-  return code;
-};
-
-Blockly.JavaScript['css_preceded_selectors'] = function(block) {
-  var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
-  var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
-  statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
-statements_element2 = statements_element2.substring(2, statements_element2.length - 2);
-
-  var code = statements_element1 + ' ~ ' + statements_element2 + ', ';
   return code;
 };
 
