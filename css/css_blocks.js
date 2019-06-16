@@ -284,7 +284,7 @@ Blockly.Blocks['css_pseudo_selectors'] = {
 Blockly.JavaScript['css_block'] = function(block) {
 //var selec = block.getFieldValue('selectors'), arr = [];
 var selec = Blockly.JavaScript.statementToCode(block, 'selectors')
-selec = selec.substring(0, selec.length - 2);
+selec = selec.substring(2, selec.length - 2);
   //remove all NULL from list
 return selec + ' {\n \n}';
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
