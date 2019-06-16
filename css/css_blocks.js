@@ -64,7 +64,7 @@ Blockly.Blocks['css_order_selectors'] = {
     this.appendStatementInput("element1")
         .setCheck("selector");
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["in","in"], ["with parent","parent"], ["immediately after","after"], ["preceded by","preceded"]]), "typeDrop");
+        .appendField(new Blockly.FieldDropdown([["in","in"], ["parent to","parent"], ["imediately after","after"], ["preceded by","preceded"]]), "typeDrop");
     this.appendStatementInput("element2")
         .setCheck("selector");
     this.setPreviousStatement(true, "selector");
