@@ -286,7 +286,7 @@ Blockly.JavaScript['css_block'] = function(block) {
 var selec = Blockly.JavaScript.statementToCode(block, 'selectors')
 selec = selec.substring(2, selec.length - 2);
   //remove all NULL from list
-return selec + ' {\n \n}';
+return selec + ' {\n}';
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
   
   
