@@ -320,8 +320,8 @@ Blockly.JavaScript['css_join_selectors'] = function(block) {
 Blockly.JavaScript['css_descendant_selectors'] = function(block) {
   var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
   var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
-statements_element1 = statements_element1.substring(0, statements_element1.length - 2);
-statements_element2 = statements_element2.substring(0, statements_element2.length - 2);
+statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
+statements_element2 = statements_element2.substring(2, statements_element2.length - 2);
 
   var code = statements_element1 + ' ' + statements_element2 + ', ';
   return code;
