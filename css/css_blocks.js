@@ -304,14 +304,14 @@ return selec + ' {\n}';
 
 Blockly.JavaScript['css_class_selector'] = function(block) {
   var text_classname = block.getFieldValue('className');
-  // TODO: Assemble JavaScript into code variable.
+text_classname = text_classname.split(' ')[0];
   var code = '.'+text_classname+', ';
   return code;
 };
 
 Blockly.JavaScript['css_id_selector'] = function(block) {
   var text_idname = block.getFieldValue('idName');
-  // TODO: Assemble JavaScript into code variable.
+  text_idname = text_idname.split(' ')[0];
   var code = '#'+text_idname+', ';
   return code;
 };
