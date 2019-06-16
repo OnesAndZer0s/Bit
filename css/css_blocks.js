@@ -278,10 +278,24 @@ Blockly.JavaScript['css_join_selectors'] = function(block) {
 Blockly.JavaScript['css_order_selectors'] = function(block) {
   var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
   var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
+  var dropdown_typedrop = block.getFieldValue('typeDrop');
 statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
 statements_element2 = statements_element2.substring(2, statements_element2.length - 2);
-
-  var code = statements_element1 + ' ' + statements_element2 + ', ';
+var change;
+  
+if (dropdown_typedrop == 'parent') {
+change = '>';
+}
+else if (dropdown_typedrop == 'after') {
+change = '+';
+}
+else if (dropdown_typedrop == 'preceded') {
+change = '~';       
+}
+else {
+change = ' ';
+}
+  var code = statements_element1 + change + statements_element2 + ', ';
   return code;
 };
 
