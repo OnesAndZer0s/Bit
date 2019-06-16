@@ -301,14 +301,14 @@ return "console.log('YEET');";
 Blockly.JavaScript['css_class_selector'] = function(block) {
   var text_classname = block.getFieldValue('className');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '.'+text_classname+', ';
   return code;
 };
 
 Blockly.JavaScript['css_id_selector'] = function(block) {
   var text_idname = block.getFieldValue('idName');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '#'+text_idname+', ';
   return code;
 };
 
@@ -323,7 +323,7 @@ Blockly.JavaScript['css_descendant_selectors'] = function(block) {
   var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
   var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = statements_element1 + ' ' + statements_element2 + ', ';
   return code;
 };
 
