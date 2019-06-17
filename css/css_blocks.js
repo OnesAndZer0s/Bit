@@ -273,15 +273,21 @@ console.log(input);
 1 - number input
 2 - language input
 */
-    if (input) {
-      if (false) {
+    if (input == 0) {
+if (this.getField('lang') !== null) {this.getInput('line').removeField("lang");}
+if (this.getField('num') !== null) {this.getInput('line').removeField("num");}
+}
+    if (input == 1) {
+this.getInput('line').appendField(new Blockly.FieldNumber(0, 0), "num");
+if (this.getField('lang') !== null) {this.getInput('line').removeField("lang");}
+}
+    if (input == 2) {
 this.getInput('line').appendField(new Blockly.FieldDropdown(langDrop), "lang");
+if (this.getField('num') !== null) {this.getInput('line').removeField("num");}
+}
 
-      }
-   } else if (false) {
-     this.getInput('line').removeField("lang");
-   }
-  }
+}
+
 };
 
 
