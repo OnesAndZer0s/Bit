@@ -258,18 +258,17 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
    * @this Blockly.Block
    */
   updateShape_: function(divisorInput) {
-//console.log('update',divisorInput);
-//var inputExists = false;//this.getInput('DIVISOR');
-    //if (divisorInput) {
-      console.log(divisorInput)
-      if (divisorInput) {
-      console.log('CHANGE!!')
+var inputExists = this.getInput('DIVISOR');
+    if (divisorInput) {
+      //console.log(divisorInput)
+      if (!inputExists) {
+      //console.log('CHANGE!!')
         this.appendValueInput('DIVISOR')
             .setCheck('Number');
       }
-   // } else if (inputExists) {
-     // this.removeInput('DIVISOR');
-    //}
+   } else if (inputExists) {
+     this.removeInput('DIVISOR');
+   }
   }
 };
 
