@@ -230,14 +230,26 @@ Blockly.Blocks['css_pseudo_selectors'] = {
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
     this.getField('pseudoDrop').setValidator(function(option) {
-    var divisorInput = option.indexOf("#") !== -1;
-    this.sourceBlock_.updateShape_(divisorInput);
+var input = 0;
+if (option.indexOf("#") !== -1;) {
+input++
+if (option == ":lang(#)") {
+input++
+}
+}    
+this.sourceBlock_.updateShape_(input);
   });
   },
       mutationToDom: function() {
-var container = document.createElement('mutation');
-    var divisorInput = this.getFieldValue('pseudoDrop').indexOf("#") !== -1;
-    container.setAttribute('divisor_input', divisorInput);
+var container = document.createElement('mutation'),
+input = 0;
+if (this.getFieldValue('pseudoDrop').indexOf("#") !== -1;) {
+input++
+if (this.getFieldValue('pseudoDrop') == ":lang(#)") {
+input++
+}
+}
+    container.setAttribute('input', input);
     return container;
   },
   /**
@@ -246,8 +258,7 @@ var container = document.createElement('mutation');
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
-    this.updateShape_(hasinput);
+    this.updateShape_(xmlElement.getAttribute('input'));
   },
   /**
    * Modify this block to have (or not have) an input for 'is divisible by'.
@@ -255,14 +266,19 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
    * @private
    * @this Blockly.Block
    */
-  updateShape_: function(divisorInput) {
-var inputExists = this.getField("lang");
-    if (divisorInput) {
-      if (!inputExists) {
+  updateShape_: function(input) {
+console.log(input);
+/** 
+0 - no input
+1 - number input
+2 - language input
+*/
+    if (input) {
+      if (false) {
 this.getInput('line').appendField(new Blockly.FieldDropdown(langDrop), "lang");
 
       }
-   } else if (inputExists) {
+   } else if (false) {
      this.getInput('line').removeField("lang");
    }
   }
