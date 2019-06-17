@@ -1,7 +1,7 @@
 var elementDrop = [['elementName','ELEMENT'],['aa','bb']],
     attributeDrop = [['attributeName','ATTRIBUTE'],['aa','bb']],
-    pseudoDrop = [['active',':active'],['checked',':checked'],['disabled',':disabled'],['empty',':empty'],['enabled',':enabled'],['first child',':first-child'],['first of type',':first-of-type'],['focus',':focus'],['hover',':hover'],['in range',':in-range'],['invalid',':invalid'],['lang',':lang(#)'],['last child',':last-child'],['last of type',':last-of-type'],['link',':link'],['nth child',':nth-child(#) MUTATOR'],['nth last child',':nth-last-child(#) MUTATOR'],['nth last of type',':nth-last-of-type(#) MUTATOR'],['nth of type',':nth-of-type(#) MUTATOR'],['only of type',':only-of-type'],['only child',':only-child'],['optional',':optional'],['read only',':read-only'],['read/write',':read-write'],['required',':required'],['root',':root'],['target',':target'],['valid',':valid'],['visited',':visited']];
-
+    pseudoDrop = [['active',':active'],['checked',':checked'],['disabled',':disabled'],['empty',':empty'],['enabled',':enabled'],['first child',':first-child'],['first of type',':first-of-type'],['focus',':focus'],['hover',':hover'],['in range',':in-range'],['invalid',':invalid'],['lang',':lang(#)'],['last child',':last-child'],['last of type',':last-of-type'],['link',':link'],['nth child',':nth-child(#) MUTATOR'],['nth last child',':nth-last-child(#) MUTATOR'],['nth last of type',':nth-last-of-type(#) MUTATOR'],['nth of type',':nth-of-type(#) MUTATOR'],['only of type',':only-of-type'],['only child',':only-child'],['optional',':optional'],['read only',':read-only'],['read/write',':read-write'],['required',':required'],['root',':root'],['target',':target'],['valid',':valid'],['visited',':visited']],
+    langDrop = [['elementName','ELEMENT'],['aa','bb']];
 
 Blockly.Blocks['css_block'] = {
   init: function() {
@@ -261,7 +261,7 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
 var inputExists = this.getField("lang");
     if (divisorInput) {
       if (!inputExists) {
-this.getInput('line').appendField(new Blockly.FieldTextInput("lang"), "lang");
+this.getInput('line').appendField(new Blockly.FieldDropdown(langDrop), "lang");
 
       }
    } else if (inputExists) {
