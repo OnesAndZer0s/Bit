@@ -1,4 +1,6 @@
-var elementDrop = [['elementName','ELEMENT'],['aa','bb']];
+var elementDrop = [['elementName','ELEMENT'],['aa','bb']],
+    attributeDrop = [['attributeName','ATTRIBUTE'],['aa','bb']],
+    pseudoDrop = [['pseudoName','PSEUDO'],['aa','bb']];
 
 
 Blockly.Blocks['css_block'] = {
@@ -118,7 +120,7 @@ Blockly.Blocks['css_attribute_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
     this.setPreviousStatement(true, "selector");
     this.setNextStatement(true, "selector");
     this.setColour(345);
@@ -131,7 +133,7 @@ Blockly.Blocks['css_attribute_with_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName")
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
         .appendField("with")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -146,7 +148,7 @@ Blockly.Blocks['css_attribute_containing_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName")
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
         .appendField("containing")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -161,7 +163,7 @@ Blockly.Blocks['css_attribute_starting_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName")
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
         .appendField("starting")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -176,7 +178,7 @@ Blockly.Blocks['css_attribute_begins_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName")
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
         .appendField("begins")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -191,7 +193,7 @@ Blockly.Blocks['css_attribute_ends_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName")
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
         .appendField("ends")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -206,7 +208,7 @@ Blockly.Blocks['css_attribute_substring_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldTextInput("attribute name"), "attributeName")
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
         .appendField("substring")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -221,7 +223,7 @@ Blockly.Blocks['css_pseudo_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("pseudo")
-        .appendField(new Blockly.FieldDropdown([["option","OPTIONNAME"], ["option","OPTIONNAME"], ["option","OPTIONNAME"]]), "pseudoDrop");
+        .appendField(new Blockly.FieldDropdown(pseudoDrop), "pseudoDrop");
     this.appendStatementInput("pseudo")
         .setCheck("selector");
     this.setPreviousStatement(true, "selector");
