@@ -234,7 +234,6 @@ Blockly.Blocks['css_pseudo_selectors'] = {
         console.log("MUTATION");
 var container = document.createElement('mutation');
     var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
-    console.log(divisorInput,this.getFieldValue('pseudoDrop'));
     container.setAttribute('divisor_input', divisorInput);
     return container;
   },
@@ -246,7 +245,6 @@ var container = document.createElement('mutation');
   domToMutation: function(xmlElement) {
     console.log("DOM");
 var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
-console.log(xmlElement.getAttribute('divisor_input') == 'true');
     this.updateShape_(hasinput);
   },
   /**
@@ -257,7 +255,7 @@ console.log(xmlElement.getAttribute('divisor_input') == 'true');
    */
   updateShape_: function(divisorInput) {
 console.log('update',divisorInput);
-var inputExists = this.getInput('DIVISOR');
+var inputExists = false;//this.getInput('DIVISOR');
     if (divisorInput) {
       if (!inputExists) {
         this.appendValueInput('DIVISOR')
