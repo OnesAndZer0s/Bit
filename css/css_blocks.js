@@ -278,7 +278,7 @@ else if (cur[0] == "#" && dev[1] == "B") {dev[1] = cur;}
 else if (cur[0] !== "#" && cur[0] !== "." && dev[0] == "A") {dev[0] = cur;}
 
 });
-if (dev[1] == "B") {dev.splice(1,2);}
+if (dev[1] == "B") {dev.splice(1,1);}
 if (dev[0] == "A") {dev.splice(0,1);}
 code = dev.join("")+", ";
 if (statements_element !== '') {
