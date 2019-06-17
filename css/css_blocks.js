@@ -264,7 +264,7 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
    // } else if (inputExists) {
      // this.removeInput('DIVISOR');
     //}
- // }
+  }
 };
 
 
