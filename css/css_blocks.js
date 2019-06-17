@@ -258,7 +258,7 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
    * @this Blockly.Block
    */
   updateShape_: function(divisorInput) {
-var inputExists = this.getInput('lang');
+var inputExists = this.getInput('line').getField("lang");
     if (divisorInput) {
       if (!inputExists) {
 this.getInput('line').appendField(new Blockly.FieldTextInput("lang"), "lang");
