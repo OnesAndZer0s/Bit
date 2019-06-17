@@ -272,8 +272,9 @@ Blockly.JavaScript['css_join_selectors'] = function(block) {
   var statements_element = Blockly.JavaScript.statementToCode(block, 'element');
   // TODO: Assemble JavaScript into code variable.
   var code = statements_element.split(', ');
+  console.log(code);
   if (statements_element !== '') {
-return code;
+return "PLACEHOLDER;
     }
 else {
 return '';
