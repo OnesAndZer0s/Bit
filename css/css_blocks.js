@@ -257,7 +257,9 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
 //console.log('update',divisorInput);
 //var inputExists = false;//this.getInput('DIVISOR');
     //if (divisorInput) {
+      console.log(divisorInput)
       if (divisorInput) {
+      console.log('CHANGE!!')
         this.appendValueInput('DIVISOR')
             .setCheck('Number');
       }
