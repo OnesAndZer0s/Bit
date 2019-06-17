@@ -232,12 +232,14 @@ Blockly.Blocks['css_pseudo_selectors'] = {
   },
     mutationToDom: function() {
   var container = document.createElement('mutation');
-  console.log('PLACEHOLDER')//var divisorInput = (this.getFieldValue('PROPERTY') == 'DIVISIBLE_BY');
+  console.log('m')
+        //var divisorInput = (this.getFieldValue('PROPERTY') == 'DIVISIBLE_BY');
   //container.setAttribute('divisor_input', divisorInput);
   return container;
 },
     domToMutation: function(xmlElement) {
-}
+onsole.log('d')
+    }
 };
 
 
