@@ -232,8 +232,9 @@ Blockly.Blocks['css_pseudo_selectors'] = {
   },
       mutationToDom: function() {
     var container = document.createElement('mutation');
-    var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
-    container.setAttribute('stub', divisorInput);
+    console.log(this.getFieldValue('pseudoDrop'));
+          var drop = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+    container.setAttribute('stub', drop);
     return container;
   },
   /**
@@ -242,8 +243,8 @@ Blockly.Blocks['css_pseudo_selectors'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var divisorInput = (xmlElement.getAttribute('stub') == 'true');
-    this.updateShape_(divisorInput);
+    var drop = (xmlElement.getAttribute('stub') == 'true');
+    this.updateShape_(drop);
   },
   /**
    * Modify this block to have (or not have) an input for 'is divisible by'.
