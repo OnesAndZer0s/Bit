@@ -458,9 +458,11 @@ Blockly.JavaScript['css_attribute_substring_selectors'] = function(block) {
 };
 
 Blockly.JavaScript['css_pseudo_selectors'] = function(block) {
-  var dropdown_pseudodrop = block.getFieldValue('pseudoDrop');
-  if (dropdown_pseudodrop.indexOf("#") !== -1) {console.log("FANCY");}
-// TODO: Assemble JavaScript into code variable.
-  var code = dropdown_pseudodrop+', ';
+  var drop = block.getFieldValue('pseudoDrop');
+  if (drop.indexOf("#") !== -1) {
+      if (drop == ":lang(#)") {drop = drop.replace("#","DEMO!!!"); }
+      else {drop = drop.replace("#","WHAT"); }
+}
+  var code = drop+', ';
   return code;
 };
