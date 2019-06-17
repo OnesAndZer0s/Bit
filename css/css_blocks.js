@@ -229,6 +229,10 @@ Blockly.Blocks['css_pseudo_selectors'] = {
     this.setColour(345);
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
+    this.getField('pseudoDrop').setValidator(function(option) {
+    var divisorInput = [":lang(#)"].includes(option);
+    this.sourceBlock_.updateShape_(divisorInput);
+  });
   },
       mutationToDom: function() {
         console.log("MUTATION");
