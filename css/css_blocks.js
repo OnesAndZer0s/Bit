@@ -293,7 +293,6 @@ if (this.getField('num') !== null) {this.getInput('line').removeField("num");}
 Blockly.JavaScript['css_block'] = function(block) {
 //var selec = block.getFieldValue('selectors'), arr = [];
 var selec = Blockly.JavaScript.statementToCode(block, 'selectors')
-console.log(selec);
 if (selec == '') {
 selec = '*'
 } else {
@@ -301,7 +300,7 @@ selec = selec.substring(2, selec.length - 2);
 }
 
   //remove all NULL from list
-return selec + ' {\n}';
+return '\n' + selec + ' {\n}';
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
   
   
