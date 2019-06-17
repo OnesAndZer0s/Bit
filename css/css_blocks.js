@@ -1,6 +1,6 @@
 var elementDrop = [['elementName','ELEMENT'],['aa','bb']],
     attributeDrop = [['attributeName','ATTRIBUTE'],['aa','bb']],
-    pseudoDrop = [['active',':active'],['checked',':checked'],['disabled',':disabled'],['empty',':empty'],['enabled',':enabled'],['first child',':first-child'],['first of type',':first-of-type'],['focus',':focus'],['hover',':hover'],['in range',':in-range'],['invalid',':invalid'],['lang',':lang(#)'],['last child',':last-child'],['last of type',':last-of-type'],['link',':link'],['nth child',':nth-child(#) MUTATOR'],['nth last child',':nth-last-child(#) MUTATOR'],['nth last of type',':nth-last-of-type(#) MUTATOR'],['nth of type',':nth-of-type(#) MUTATOR'],['only of type',':only-of-type'],['only child',':only-child'],['optional',':optional'],['read only',':read-only'],['read/write',':read-write'],['required',':required'],['root',':root'],['target',':target'],['valid',':valid'],['visited',':visited']],
+    pseudoDrop = [['active',':active'],['checked',':checked'],['disabled',':disabled'],['empty',':empty'],['enabled',':enabled'],['first child',':first-child'],['first of type',':first-of-type'],['focus',':focus'],['hover',':hover'],['in range',':in-range'],['invalid',':invalid'],['lang',':lang(#)'],['last child',':last-child'],['last of type',':last-of-type'],['link',':link'],['nth child',':nth-child(#)'],['nth last child',':nth-last-child(#)'],['nth last of type',':nth-last-of-type(#)'],['nth of type',':nth-of-type(#)'],['only of type',':only-of-type'],['only child',':only-child'],['optional',':optional'],['read only',':read-only'],['read/write',':read-write'],['required',':required'],['root',':root'],['target',':target'],['valid',':valid'],['visited',':visited']],
     langDrop = [['Afar','aa'],['Abkhazian','ab'],['Afrikaans','af'],['Akan','ak'],['Albanian','sq'],['Amharic','am'],['Arabic','ar'],['Aragonese','an'],['Armenian','hy'],['Assamese','as'],['Avaric','av'],['Avestan','ae'],['Aymara','ay'],['Azerbaijani','az'],['Bashkir','ba'],['Bambara','bm'],['Basque','eu'],['Belarusian','be'],['Bengali','bn'],['Bihari','bh'],['Bislama','bi'],['Tibetan','bo'],['Bosnian','bs'],['Breton','br'],['Bulgarian','bg'],['Burmese','my'],['Catalan','ca'],['Czech','cs'],['Chamorro','ch'],['Chechen','ce'],['Chinese','zh'],['Slavonic','cu'],['Chuvash','cv'],['Cornish','kw'],['Corsican','co'],['Cree','cr'],['Welsh','cy'],['Danish','da'],['German','de'],['Maldivian','dv'],['Dutch','nl'],['Dzongkha','dz'],['Greek','el'],['English','en'],['Esperanto','eo'],['Estonian','et'],['Basque','eu'],['Ewe','ee'],['Faroese','fo'],['Persian','fa'],['Fijian','fj'],['Finnish','fi'],['French','fr'],['Frisian','fy'],['Fulah','ff'],['Georgian','ka'],['Gaelic','gd'],['Irish','ga'],['Galician','gl'],['Manx','gv'],['Guarani','gn'],['Gujarati','gu'],['Haitian','ht'],['Hausa','ha'],['Hebrew','he'],['Herero','hz'],['Hindi','hi'],['Hiri Motu','ho'],['Croatian','hr'],['Hungarian','hu'],['Armenian','hy'],['Igbo','ig'],['Icelandic','is'],['Ido','io'],['Nuosu','ii'],['Inuktitut','iu'],['Interlingue','ie'],['Interlingua','ia'],['Indonesian','id'],['Inupiaq','ik'],['Italian','it'],['Javanese','jv'],['Japanese','ja'],['Greenlandic','kl'],['Kannada','kn'],['Kashmiri','ks'],['Georgian','ka'],['Kanuri','kr'],['Kazakh','kk'],['Khmer','km'],['Kikuyu','ki'],['Kinyarwanda','rw'],['Kirghiz','ky'],['Komi','kv'],['Kongo','kg'],['Korean','ko'],['Kuanyama','kj'],['Kurdish','ku'],['Lao','lo'],['Latin','la'],['Latvian','lv'],['Limburgan','li'],['Lingala','ln'],['Lithuanian','lt'],['Luxembourgish','lb'],['Luba-Katanga','lu'],['Ganda','lg'],['Macedonian','mk'],['Marshallese','mh'],['Malayalam','ml'],['Maori','mi'],['Marathi','mr'],['Malay','ms'],['Macedonian','mk'],['Malagasy','mg'],['Maltese','mt'],['Mongolian','mn'],['Maori','mi'],['Nauru','na'],['Navaho','nv'],['South Ndebele','nr'],['North Ndebele','nd'],['Ndonga','ng'],['Nepali','ne'],['Dutch','nl'],['Norwegian Nynorsk','nn'],['Bokmål','nb'],['Norwegian','no'],['Chichewa','ny'],['Occitan','oc'],['Ojibwa','oj'],['Oriya','or'],['Oromo','om'],['Ossetian','os'],['Panjabi','pa'],['Persian','fa'],['Pali','pi'],['Polish','pl'],['Portuguese','pt'],['Pushto','ps'],['Quechua','qu'],['Romansh','rm'],['Romanian','ro'],['Rundi','rn'],['Russian','ru'],['Sango','sg'],['Sanskrit','sa'],['Sinhala','si'],['Slovak','sk'],['Slovenian','sl'],['Sami','se'],['Samoan','sm'],['Shona','sn'],['Sindhi','sd'],['Somali','so'],['Sotho','st'],['Spanish','es'],['Albanian','sq'],['Sardinian','sc'],['Serbian','sr'],['Swati','ss'],['Sundanese','su'],['Swahili','sw'],['Swedish','sv'],['Tahitian','ty'],['Tamil','ta'],['Tatar','tt'],['Telugu','te'],['Tajik','tg'],['Tagalog','tl'],['Thai','th'],['Tibetan','bo'],['Tigrinya','ti'],['Tonga','to'],['Tswana','tn'],['Tsonga','ts'],['Turkmen','tk'],['Turkish','tr'],['Twi','tw'],['Uighur','ug'],['Ukrainian','uk'],['Urdu','ur'],['Uzbek','uz'],['Venda','ve'],['Vietnamese','vi'],['Volapük','vo'],['Welsh','cy'],['Walloon','wa'],['Wolof','wo'],['Xhosa','xh'],['Yiddish','yi'],['Yoruba','yo'],['Zhuang','za'],['Chinese','zh'],['Zulu','zu']];
 
 Blockly.Blocks['css_block'] = {
@@ -230,14 +230,13 @@ Blockly.Blocks['css_pseudo_selectors'] = {
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
     this.getField('pseudoDrop').setValidator(function(option) {
-    var divisorInput = [":lang(#)"].includes(option);
+    var divisorInput = option.indexOf("#") !== -1;
     this.sourceBlock_.updateShape_(divisorInput);
   });
   },
       mutationToDom: function() {
-        console.log("MUTATION");
 var container = document.createElement('mutation');
-    var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+    var divisorInput = this.getFieldValue('pseudoDrop').indexOf("#") !== -1;
     container.setAttribute('divisor_input', divisorInput);
     return container;
   },
@@ -247,7 +246,6 @@ var container = document.createElement('mutation');
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    console.log("DOM");
 var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
     this.updateShape_(hasinput);
   },
