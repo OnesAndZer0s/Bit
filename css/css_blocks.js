@@ -459,8 +459,8 @@ Blockly.JavaScript['css_attribute_substring_selectors'] = function(block) {
 
 Blockly.JavaScript['css_pseudo_selectors'] = function(block) {
   var dropdown_pseudodrop = block.getFieldValue('pseudoDrop');
-  var statements_pseudo = Blockly.JavaScript.statementToCode(block, 'pseudo');
-  // TODO: Assemble JavaScript into code variable.
-  var code = statements_pseudo+', ';
+  if (dropdown_pseudodrop.indexOf("#") !== -1) {console.log("FANCY");}
+// TODO: Assemble JavaScript into code variable.
+  var code = dropdown_pseudodrop+', ';
   return code;
 };
