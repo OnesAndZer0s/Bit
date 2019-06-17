@@ -230,16 +230,39 @@ Blockly.Blocks['css_pseudo_selectors'] = {
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
   },
-    mutationToDom: function() {
-  var container = document.createElement('mutation');
-  console.log('m');
-//var divisorInput = (this.getFieldValue('PROPERTY') == 'DIVISIBLE_BY');
-  //container.setAttribute('divisor_input', divisorInput);
-  return container;
-},
-    domToMutation: function(xmlElement) {
-console.log('d');
+      mutationToDom: function() {
+    var container = document.createElement('mutation');
+    var divisorInput = (true);
+    container.setAttribute('divisor_input', divisorInput);
+    return container;
+  },
+  /**
+   * Parse XML to restore the 'divisorInput'.
+   * @param {!Element} xmlElement XML storage element.
+   * @this Blockly.Block
+   */
+  domToMutation: function(xmlElement) {
+    var divisorInput = (xmlElement.getAttribute('divisor_input') == 'true');
+    this.updateShape_(divisorInput);
+  },
+  /**
+   * Modify this block to have (or not have) an input for 'is divisible by'.
+   * @param {boolean} divisorInput True if this block has a divisor input.
+   * @private
+   * @this Blockly.Block
+   */
+  updateShape_: function(divisorInput) {
+    // Add or remove a Value Input.
+    var inputExists = this.getInput('DIVISOR');
+    if (divisorInput) {
+      if (!inputExists) {
+        this.appendValueInput('DIVISOR')
+            .setCheck('Number');
+      }
+    } else if (inputExists) {
+      this.removeInput('DIVISOR');
     }
+  }
 };
 
 
