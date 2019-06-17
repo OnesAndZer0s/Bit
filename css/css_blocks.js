@@ -221,7 +221,7 @@ Blockly.Blocks['css_attribute_substring_selectors'] = {
 
 Blockly.Blocks['css_pseudo_selectors'] = {
   init: function() {
-    this.appendDummyInput()
+    this.appendDummyInput("line")
         .appendField("pseudo")
         .appendField(new Blockly.FieldDropdown(pseudoDrop), "pseudoDrop");
     this.setPreviousStatement(true, "selector");
@@ -261,7 +261,7 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
 var inputExists = this.getInput('lang');
     if (divisorInput) {
       if (!inputExists) {
-this.appendField(new Blockly.FieldTextInput("lang"), "lang");
+this.getInput('line').appendField(new Blockly.FieldTextInput("lang"), "lang");
 
       }
    } else if (inputExists) {
