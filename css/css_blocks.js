@@ -133,7 +133,7 @@ Blockly.Blocks['css_attribute_with_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName")
         .appendField("with")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -148,7 +148,7 @@ Blockly.Blocks['css_attribute_containing_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName")
         .appendField("containing")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -163,7 +163,7 @@ Blockly.Blocks['css_attribute_starting_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName")
         .appendField("starting")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -178,7 +178,7 @@ Blockly.Blocks['css_attribute_begins_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName")
         .appendField("begins")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -193,7 +193,7 @@ Blockly.Blocks['css_attribute_ends_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName")
         .appendField("ends")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
@@ -208,7 +208,7 @@ Blockly.Blocks['css_attribute_substring_selectors'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
-        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName");
+        .appendField(new Blockly.FieldDropdown(attributeDrop), "attributeName")
         .appendField("substring")
         .appendField(new Blockly.FieldTextInput("attribute value"), "attributeValue");
     this.setPreviousStatement(true, "selector");
