@@ -461,7 +461,7 @@ Blockly.JavaScript['css_pseudo_selectors'] = function(block) {
   var drop = block.getFieldValue('pseudoDrop');
   if (drop.indexOf("#") !== -1) {
       if (drop == ":lang(#)") {drop = drop.replace("#",block.getFieldValue('lang')); }
-      else {drop = drop.replace("#",block.getFieldValue('num');); }
+      else {drop = drop.replace("#",block.getFieldValue('num')); }
 }
   var code = drop+', ';
   return code;
