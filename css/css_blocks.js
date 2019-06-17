@@ -271,10 +271,18 @@ Blockly.JavaScript['css_id_selector'] = function(block) {
 Blockly.JavaScript['css_join_selectors'] = function(block) {
   var statements_element = Blockly.JavaScript.statementToCode(block, 'element');
 statements_element = statements_element.substring(2, statements_element.length - 2);
-  var code = statements_element.split(', ');
-  console.log(code);
-  if (statements_element !== '') {
-return "PLACEHOLDER";
+  var code = statements_element.split(', '), dev = ["A","B"];
+code.forEach(function(cur,ind,arr){
+if (cur[0] == '.') {dev.push(cur);}
+else if (cur[0] == "#" && dev[1] == "B") {dev[1] = cur;}
+else if (cur[0] !== "#" && cur[0] !== "." && dev[0] == "A") {dev[0] = cur;}
+
+});
+if (dev[1] == "B") {dev.splice(1,2);}
+if (dev[0] == "A") {dev.splice(0,1);}
+code = dev.join("");
+if (statements_element !== '') {
+return code;
     }
 else {
 return '';
