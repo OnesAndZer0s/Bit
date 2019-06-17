@@ -246,7 +246,7 @@ var container = document.createElement('mutation');
   domToMutation: function(xmlElement) {
     console.log("DOM");
 var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
-console.log(xmlElement.getAttribute('divisor_input'));
+console.log(xmlElement.getAttribute('divisor_input') == 'true');
     this.updateShape_(hasinput);
   },
   /**
