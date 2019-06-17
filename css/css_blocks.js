@@ -330,7 +330,7 @@ Blockly.JavaScript['css_join_selectors'] = function(block) {
 statements_element = statements_element.substring(2, statements_element.length - 2);
   var code = statements_element.split(', '), 
 elmt="", id="", clss = [], func=[];
-arr.forEach(function(cur,ind,arr){
+code.forEach(function(cur,ind,arr){
 if (cur[0] == '.') {clss.push(cur);}
 else if (cur[0] == ':') {func.push(cur);}
 else if (cur[0] == '#' && id == "") {id = cur;}
