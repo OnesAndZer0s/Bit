@@ -404,7 +404,7 @@ return '';
 Blockly.JavaScript['css_attribute_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '[' + text_attributename + '], ';
   return code;
 };
 
@@ -412,7 +412,7 @@ Blockly.JavaScript['css_attribute_with_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = '[' + text_attributename + '='+ text_attributevalue +'], ';
   return code;
 };
 
@@ -420,7 +420,7 @@ Blockly.JavaScript['css_attribute_containing_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = [' + text_attributename + '~='+ text_attributevalue +'], ';
   return code;
 };
 
@@ -428,7 +428,7 @@ Blockly.JavaScript['css_attribute_starting_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = [' + text_attributename + '|='+ text_attributevalue +'], ';
   return code;
 };
 
@@ -436,7 +436,7 @@ Blockly.JavaScript['css_attribute_begins_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = [' + text_attributename + '^='+ text_attributevalue +'], ';
   return code;
 };
 
@@ -444,7 +444,7 @@ Blockly.JavaScript['css_attribute_ends_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = [' + text_attributename + '$=' + text_attributevalue +'], ';
   return code;
 };
 
@@ -452,7 +452,7 @@ Blockly.JavaScript['css_attribute_substring_selectors'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = [' + text_attributename + '*='+ text_attributevalue +'], ';
   return code;
 };
 
