@@ -243,8 +243,8 @@ Blockly.Blocks['css_pseudo_selectors'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var hasinput = (xmlElement.getAttribute('stub') == 'true');
-    this.updateShape_(true);
+    var hasinput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+    this.updateShape_(hasinput);
   },
   /**
    * Modify this block to have (or not have) an input for 'is divisible by'.
