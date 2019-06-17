@@ -265,7 +265,7 @@ this.getInput('line').appendField(new Blockly.FieldTextInput("lang"), "lang");
 
       }
    } else if (inputExists) {
-     this.removeInput('lang');
+     this.getInput('line').removeField("lang");
    }
   }
 };
