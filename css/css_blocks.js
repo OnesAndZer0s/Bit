@@ -258,16 +258,14 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
    * @this Blockly.Block
    */
   updateShape_: function(divisorInput) {
-var inputExists = this.getInput('DIVISOR');
+var inputExists = this.getInput('lang');
     if (divisorInput) {
-      //console.log(divisorInput)
       if (!inputExists) {
-      //console.log('CHANGE!!')
-        this.appendValueInput('DIVISOR')
-            .setCheck('Number');
+this.appendField(new Blockly.FieldTextInput("lang"), "lang");
+
       }
    } else if (inputExists) {
-     this.removeInput('DIVISOR');
+     this.removeInput('lang');
    }
   }
 };
