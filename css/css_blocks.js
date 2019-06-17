@@ -231,9 +231,9 @@ Blockly.Blocks['css_pseudo_selectors'] = {
  this.setHelpUrl("");
   },
       mutationToDom: function() {
-    var container = document.createElement('mutation');
+        console.log("MUTATION");
+var container = document.createElement('mutation');
     var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
-    console.log(divisorInput);
     container.setAttribute('stub', divisorInput);
     return container;
   },
@@ -243,7 +243,9 @@ Blockly.Blocks['css_pseudo_selectors'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var hasinput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+    console.log("DOM");
+var hasinput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+console.log(hasinput,this.getFieldValue('pseudoDrop'));
     this.updateShape_(hasinput);
   },
   /**
