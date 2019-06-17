@@ -270,7 +270,7 @@ Blockly.JavaScript['css_id_selector'] = function(block) {
 
 Blockly.JavaScript['css_join_selectors'] = function(block) {
   var statements_element = Blockly.JavaScript.statementToCode(block, 'element');
-  // TODO: Assemble JavaScript into code variable.
+statements_element = statements_element.substring(2, statements_element.length - 2);
   var code = statements_element.split(', ');
   console.log(code);
   if (statements_element !== '') {
