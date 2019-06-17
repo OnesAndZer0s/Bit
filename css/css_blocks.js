@@ -232,9 +232,9 @@ Blockly.Blocks['css_pseudo_selectors'] = {
   },
       mutationToDom: function() {
     var container = document.createElement('mutation');
-    console.log(this.getFieldValue('pseudoDrop'));
-          var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
-    container.setAttribute('divisorInput', divisorInput);
+    var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+    console.log(divisorInput);
+    container.setAttribute('stub', divisorInput);
     return container;
   },
   /**
@@ -243,7 +243,7 @@ Blockly.Blocks['css_pseudo_selectors'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var divisorInput = (xmlElement.getAttribute('divisorInput') == 'true');
+    var divisorInput = (xmlElement.getAttribute('stub') == 'true');
     this.updateShape_(divisorInput);
   },
   /**
