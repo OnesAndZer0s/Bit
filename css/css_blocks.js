@@ -1,6 +1,6 @@
 var elementDrop = [['elementName','ELEMENT'],['aa','bb']],
     attributeDrop = [['attributeName','ATTRIBUTE'],['aa','bb']],
-    pseudoDrop = [['active',':active'],['checked',':checked'],['disabled',':disabled'],['empty',':empty'],['enabled',':enabled'],['first child',':first-child'],['first of type',':first-of-type'],['focus',':focus'],['hover',':hover'],['in range',':in-range'],['invalid',':invalid'],['lang',':lang(#) MUTATOR'],['last child',':last-child'],['last of type',':last-of-type'],['link',':link'],['nth child',':nth-child(#) MUTATOR'],['nth last child',':nth-last-child(#) MUTATOR'],['nth last of type',':nth-last-of-type(#) MUTATOR'],['nth of type',':nth-of-type(#) MUTATOR'],['only of type',':only-of-type'],['only child',':only-child'],['optional',':optional'],['read only',':read-only'],['read/write',':read-write'],['required',':required'],['root',':root'],['target',':target'],['valid',':valid'],['visited',':visited']];
+    pseudoDrop = [['active',':active'],['checked',':checked'],['disabled',':disabled'],['empty',':empty'],['enabled',':enabled'],['first child',':first-child'],['first of type',':first-of-type'],['focus',':focus'],['hover',':hover'],['in range',':in-range'],['invalid',':invalid'],['lang',':lang(#)'],['last child',':last-child'],['last of type',':last-of-type'],['link',':link'],['nth child',':nth-child(#) MUTATOR'],['nth last child',':nth-last-child(#) MUTATOR'],['nth last of type',':nth-last-of-type(#) MUTATOR'],['nth of type',':nth-of-type(#) MUTATOR'],['only of type',':only-of-type'],['only child',':only-child'],['optional',':optional'],['read only',':read-only'],['read/write',':read-write'],['required',':required'],['root',':root'],['target',':target'],['valid',':valid'],['visited',':visited']];
 
 
 Blockly.Blocks['css_block'] = {
@@ -232,8 +232,8 @@ Blockly.Blocks['css_pseudo_selectors'] = {
   },
       mutationToDom: function() {
     var container = document.createElement('mutation');
-    var divisorInput = (true);
-    container.setAttribute('divisor_input', divisorInput);
+    var divisorInput = [":lang(#)"].includes(this.getFieldValue('pseudoDrop'));
+    container.setAttribute('stub', divisorInput);
     return container;
   },
   /**
@@ -242,7 +242,7 @@ Blockly.Blocks['css_pseudo_selectors'] = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    var divisorInput = (xmlElement.getAttribute('divisor_input') == 'true');
+    var divisorInput = (xmlElement.getAttribute('stub') == 'true');
     this.updateShape_(divisorInput);
   },
   /**
