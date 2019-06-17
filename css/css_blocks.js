@@ -229,7 +229,15 @@ Blockly.Blocks['css_pseudo_selectors'] = {
     this.setColour(345);
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
-  }
+  },
+    mutationToDom: function() {
+  var container = document.createElement('mutation');
+  console.log('PLACEHOLDER')//var divisorInput = (this.getFieldValue('PROPERTY') == 'DIVISIBLE_BY');
+  //container.setAttribute('divisor_input', divisorInput);
+  return container;
+},
+    domToMutation: function(xmlElement) {
+}
 };
 
 
