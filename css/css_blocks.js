@@ -274,7 +274,7 @@ Blockly.JavaScript['css_join_selectors'] = function(block) {
   var code = statements_element.split(', ');
   console.log(code);
   if (statements_element !== '') {
-return "PLACEHOLDER;
+return "PLACEHOLDER";
     }
 else {
 return '';
