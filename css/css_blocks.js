@@ -256,8 +256,8 @@ console.log(xmlElement.getAttribute('divisor_input') == 'true');
    * @this Blockly.Block
    */
   updateShape_: function(divisorInput) {
-    // Add or remove a Value Input.
-    var inputExists = this.getInput('DIVISOR');
+console.log('update',divisorInput);
+var inputExists = this.getInput('DIVISOR');
     if (divisorInput) {
       if (!inputExists) {
         this.appendValueInput('DIVISOR')
