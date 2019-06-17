@@ -267,7 +267,6 @@ input++
    * @this Blockly.Block
    */
   updateShape_: function(input) {
-console.log(input);
 /** 
 0 - no input
 1 - number input
@@ -462,6 +461,6 @@ Blockly.JavaScript['css_pseudo_selectors'] = function(block) {
   var dropdown_pseudodrop = block.getFieldValue('pseudoDrop');
   var statements_pseudo = Blockly.JavaScript.statementToCode(block, 'pseudo');
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = statements_pseudo+', ';
   return code;
 };
