@@ -231,7 +231,7 @@ Blockly.Blocks['css_pseudo_selectors'] = {
  this.setHelpUrl("");
     this.getField('pseudoDrop').setValidator(function(option) {
 var input = 0;
-if (option.indexOf("#") !== -1;) {
+if (option.indexOf("#") !== -1) {
 input++
 if (option == ":lang(#)") {
 input++
@@ -243,7 +243,7 @@ this.sourceBlock_.updateShape_(input);
       mutationToDom: function() {
 var container = document.createElement('mutation'),
 input = 0;
-if (this.getFieldValue('pseudoDrop').indexOf("#") !== -1;) {
+if (this.getFieldValue('pseudoDrop').indexOf("#") !== -1) {
 input++
 if (this.getFieldValue('pseudoDrop') == ":lang(#)") {
 input++
