@@ -39,8 +39,8 @@ Blockly.Blocks['css_id_selector'] = {
     this.appendDummyInput()
         .appendField("id")
         .appendField(new Blockly.FieldTextInput("id name"), "idName");
-    this.setPreviousStatement(true, ["selector", "core"]);
-    this.setNextStatement(true, ["selector", "core"]);
+    this.setPreviousStatement(true, "selector");
+    this.setNextStatement(true, "selector");
     this.setColour(345);
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
@@ -52,7 +52,7 @@ Blockly.Blocks['css_join_selectors'] = {
     this.appendDummyInput()
         .appendField("join");
     this.appendStatementInput("element")
-        .setCheck("core");
+        .setCheck("selector");
     this.setPreviousStatement(true, "selector");
     this.setNextStatement(true, "selector");
     this.setColour(345);
@@ -94,8 +94,8 @@ Blockly.Blocks['css_element_selectors'] = {
     this.appendDummyInput()
         .appendField("element")
         .appendField(new Blockly.FieldDropdown(elementDrop), "elementDrop");
-    this.setPreviousStatement(true, ["selector", "core"]);
-    this.setNextStatement(true, ["selector", "core"]);
+    this.setPreviousStatement(true, "selector");
+    this.setNextStatement(true, "selector");
     this.setColour(345);
  this.setTooltip("https://www.w3schools.com/css/css_pseudo_classes.asp");
  this.setHelpUrl("");
