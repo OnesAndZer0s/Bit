@@ -257,10 +257,10 @@ var hasinput = (xmlElement.getAttribute('divisor_input') == 'true');
 //console.log('update',divisorInput);
 //var inputExists = false;//this.getInput('DIVISOR');
     //if (divisorInput) {
-      //if (!inputExists) {
+      if (divisorInput) {
         this.appendValueInput('DIVISOR')
             .setCheck('Number');
-      //}
+      }
    // } else if (inputExists) {
      // this.removeInput('DIVISOR');
     //}
