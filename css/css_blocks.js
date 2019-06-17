@@ -337,7 +337,7 @@ else if (cur[0] == '#' && id == "") {id = cur;}
 else if (elmt == "") {elmt = cur;}
 
 });
-code = elmt+id+clss.join('')+func.join('');
+code = elmt+id+clss.join('')+func.join('')+", ";
 if (statements_element !== '') {
 return code;
     }
