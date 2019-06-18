@@ -53,6 +53,35 @@ initBlockly("blocklyDefine", {
 		scaleSpeed : 1.2
 	}
 }, "document.getElementById('blockDef').value = code; console.log(code);");
+	
+initBlockly("blocklyPreview", {
+  toolbox: document.getElementById('toolbox'),
+  collapse : false, 
+	comments : true, 
+	disable : true, 
+	maxBlocks : Infinity, 
+	trashcan : true, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	scrollbars : true, 
+	sounds : true, 
+	oneBasedIndex : false, 
+	grid : {
+		spacing : 20, 
+		length : 1, 
+		colour : '#888', 
+		snap : false
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : true, 
+		startScale : 1, 
+		maxScale : 1.5, 
+		minScale : 0.2, 
+		scaleSpeed : 1.2
+	}
+});
 </script>
   </body>
 
