@@ -530,6 +530,6 @@ Blockly.JavaScript['css_align_declaration'] = function(block) {
   var drop = block.getFieldValue('drop');
   var result;
   if (drop == "content") {result = block.getFieldValue('content')} else if (drop == "items") {result = block.getFieldValue('items')} else if (drop == "self") {result = block.getFieldValue('self')}
-  var code = 'align-' + drop + ": " + result + ";";
+  var code = 'align-' + drop + ": " + result + ";\n";
   return code;
 };
