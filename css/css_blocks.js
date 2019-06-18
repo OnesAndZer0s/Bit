@@ -252,20 +252,9 @@ input++
     container.setAttribute('input', input);
     return container;
   },
-  /**
-   * Parse XML to restore the 'divisorInput'.
-   * @param {!Element} xmlElement XML storage element.
-   * @this Blockly.Block
-   */
   domToMutation: function(xmlElement) {
     this.updateShape_(xmlElement.getAttribute('input'));
   },
-  /**
-   * Modify this block to have (or not have) an input for 'is divisible by'.
-   * @param {boolean} divisorInput True if this block has a divisor input.
-   * @private
-   * @this Blockly.Block
-   */
   updateShape_: function(input) {
 /** 
 0 - no input
@@ -288,6 +277,26 @@ if (this.getField('num') !== null) {this.getInput('line').removeField("num");}
 }
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Blockly.JavaScript['css_block'] = function(block) {
@@ -352,27 +361,13 @@ Blockly.JavaScript['css_order_selectors'] = function(block) {
 statements_element1 = statements_element1.substring(2, statements_element1.length - 2);
 statements_element2 = statements_element2.substring(2, statements_element2.length - 2);
 var change;
-  
-if (dropdown_typedrop == 'parent') {
-change = ' > ';
-}
-else if (dropdown_typedrop == 'after') {
-change = ' + ';
-}
-else if (dropdown_typedrop == 'preceded') {
-change = ' ~ ';       
-}
-else {
-change = ' ';
-}
+if (dropdown_typedrop == 'parent') {change = ' > ';}
+else if (dropdown_typedrop == 'after') {change = ' + ';}
+else if (dropdown_typedrop == 'preceded') {change = ' ~ ';}
+else {change = ' ';}
   
 var code = statements_element1 + change + statements_element2 + ', ';
-if (statements_element1 !== '' && statements_element2 !== '') {
-return code;
-    }
-else {
-return '';
-    }
+if (statements_element1 !== '' && statements_element2 !== '') {return code;} else {return '';}
 };
 
 Blockly.JavaScript['css_allelement_selectors'] = function(block) {
@@ -463,5 +458,70 @@ Blockly.JavaScript['css_pseudo_selectors'] = function(block) {
       else {drop = drop.replace("#",block.getFieldValue('num')); }
 }
   var code = drop+', ';
+  return code;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blockly.Blocks['css_align_declaration'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("align")
+        .appendField(new Blockly.FieldDropdown([["content","content"], ["items","items"], ["self","self"]]), "drop")
+        .appendField("   ")
+        .appendField(new Blockly.FieldDropdown([["EDIT","MUTATE"]]), "result");
+    this.setPreviousStatement(true, "declaration");
+    this.setNextStatement(true, "declaration");
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+ this.getField('drop').setValidator(function(option) {
+this.sourceBlock_.updateShape_(option);
+  });
+  },
+      mutationToDom: function() {
+var container = document.createElement('mutation');
+    container.setAttribute('input', this.getFieldValue('drop'));
+    return container;
+  },
+  domToMutation: function(xmlElement) {
+    this.updateShape_(xmlElement.getAttribute('input'));
+  },
+  updateShape_: function(input) {
+this.getField("result").setValue([['TEST'],["TEST2"]]);
+}
+
+};
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blockly.JavaScript['css_align_declaration'] = function(block) {
+  var dropdown_drop = block.getFieldValue('drop');
+  var dropdown_result = block.getFieldValue('result');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
   return code;
 };
