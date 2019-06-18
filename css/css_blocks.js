@@ -47,7 +47,7 @@ Blockly.Blocks['css_id_selector'] = {
   }
 };
 
-Blockly.Blocks['css_join_selectors'] = {
+Blockly.Blocks['css_join_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("join");
@@ -61,7 +61,7 @@ Blockly.Blocks['css_join_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_order_selectors'] = {
+Blockly.Blocks['css_order_selector'] = {
   init: function() {
     this.appendStatementInput("element1")
         .setCheck("selector");
@@ -77,7 +77,7 @@ Blockly.Blocks['css_order_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_allelement_selectors'] = {
+Blockly.Blocks['css_allelement_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("all elements");
@@ -89,7 +89,7 @@ Blockly.Blocks['css_allelement_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_element_selectors'] = {
+Blockly.Blocks['css_element_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("element")
@@ -102,7 +102,7 @@ Blockly.Blocks['css_element_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_not_selectors'] = {
+Blockly.Blocks['css_not_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("not");
@@ -116,7 +116,7 @@ Blockly.Blocks['css_not_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_selectors'] = {
+Blockly.Blocks['css_attribute_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -129,7 +129,7 @@ Blockly.Blocks['css_attribute_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_with_selectors'] = {
+Blockly.Blocks['css_attribute_with_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -144,7 +144,7 @@ Blockly.Blocks['css_attribute_with_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_containing_selectors'] = {
+Blockly.Blocks['css_attribute_containing_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -159,7 +159,7 @@ Blockly.Blocks['css_attribute_containing_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_starting_selectors'] = {
+Blockly.Blocks['css_attribute_starting_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -174,7 +174,7 @@ Blockly.Blocks['css_attribute_starting_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_begins_selectors'] = {
+Blockly.Blocks['css_attribute_begins_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -189,7 +189,7 @@ Blockly.Blocks['css_attribute_begins_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_ends_selectors'] = {
+Blockly.Blocks['css_attribute_ends_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -204,7 +204,7 @@ Blockly.Blocks['css_attribute_ends_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_attribute_substring_selectors'] = {
+Blockly.Blocks['css_attribute_substring_selector'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("attribute")
@@ -219,7 +219,7 @@ Blockly.Blocks['css_attribute_substring_selectors'] = {
   }
 };
 
-Blockly.Blocks['css_pseudo_selectors'] = {
+Blockly.Blocks['css_pseudo_selector'] = {
   init: function() {
     this.appendDummyInput("line")
         .appendField("pseudo")
@@ -333,7 +333,7 @@ Blockly.JavaScript['css_id_selector'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_join_selectors'] = function(block) {
+Blockly.JavaScript['css_join_selector'] = function(block) {
   var statements_element = Blockly.JavaScript.statementToCode(block, 'element');
 statements_element = statements_element.substring(2, statements_element.length - 2);
   var code = statements_element.split(', '), 
@@ -354,7 +354,7 @@ return '';
     }
 };
 
-Blockly.JavaScript['css_order_selectors'] = function(block) {
+Blockly.JavaScript['css_order_selector'] = function(block) {
   var statements_element1 = Blockly.JavaScript.statementToCode(block, 'element1');
   var statements_element2 = Blockly.JavaScript.statementToCode(block, 'element2');
   var dropdown_typedrop = block.getFieldValue('typeDrop');
@@ -383,7 +383,7 @@ Blockly.JavaScript['css_element_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_not_selectors'] = function(block) {
+Blockly.JavaScript['css_not_selector'] = function(block) {
   var statements_notelement = Blockly.JavaScript.statementToCode(block, 'notElement');
   statements_notelement = statements_notelement.substring(2, statements_notelement.length - 2);
 // TODO: Assemble JavaScript into code variable.
@@ -396,14 +396,14 @@ return '';
     }
 };
 
-Blockly.JavaScript['css_attribute_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   // TODO: Assemble JavaScript into code variable.
   var code = '[' + text_attributename + '], ';
   return code;
 };
 
-Blockly.JavaScript['css_attribute_with_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_with_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
@@ -411,7 +411,7 @@ Blockly.JavaScript['css_attribute_with_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_attribute_containing_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_containing_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
@@ -419,7 +419,7 @@ Blockly.JavaScript['css_attribute_containing_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_attribute_starting_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_starting_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
@@ -427,7 +427,7 @@ Blockly.JavaScript['css_attribute_starting_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_attribute_begins_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_begins_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
@@ -435,7 +435,7 @@ Blockly.JavaScript['css_attribute_begins_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_attribute_ends_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_ends_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
@@ -443,7 +443,7 @@ Blockly.JavaScript['css_attribute_ends_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_attribute_substring_selectors'] = function(block) {
+Blockly.JavaScript['css_attribute_substring_selector'] = function(block) {
   var text_attributename = block.getFieldValue('attributeName');
   var text_attributevalue = block.getFieldValue('attributeValue');
   // TODO: Assemble JavaScript into code variable.
@@ -451,7 +451,7 @@ Blockly.JavaScript['css_attribute_substring_selectors'] = function(block) {
   return code;
 };
 
-Blockly.JavaScript['css_pseudo_selectors'] = function(block) {
+Blockly.JavaScript['css_pseudo_selector'] = function(block) {
   var drop = block.getFieldValue('pseudoDrop');
   if (drop.indexOf("#") !== -1) {
       if (drop == ":lang(#)") {drop = drop.replace("#",block.getFieldValue('lang')); }
