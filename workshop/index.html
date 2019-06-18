@@ -55,24 +55,17 @@ initBlockly("blocklyDefine", {
 }, "document.getElementById('blockDef').value = code; console.log(code);");
 	
 initBlockly("blocklyPreview", {
-  toolbox: document.getElementById('toolbox'),
   collapse : false, 
-	comments : true, 
-	disable : true, 
+	comments : false, 
+	disable : false, 
 	maxBlocks : Infinity, 
-	trashcan : true, 
+	trashcan : false, 
 	horizontalLayout : false, 
 	toolboxPosition : 'start', 
 	css : true, 
 	scrollbars : true, 
 	sounds : true, 
 	oneBasedIndex : false, 
-	grid : {
-		spacing : 20, 
-		length : 1, 
-		colour : '#888', 
-		snap : false
-	}, 
 	zoom : {
 		controls : true, 
 		wheel : true, 
