@@ -502,7 +502,6 @@ this.getField("result").setValue([['TEST'],["TEST2"]]);
 }
 
 };
-};
 
 
 
