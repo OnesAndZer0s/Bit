@@ -513,6 +513,21 @@ else if ( input == "self" && this.getField('self') == null) {this.getInput('line
 };
 
 
+Blockly.Blocks['css_background_declaration'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("background")
+        .appendField(new Blockly.FieldDropdown([["attachment","attachment"], ["blend mode","blend-mode"], ["clip","clip"], ["color","color"], ["image","image"], ["origin","origin"], ["position","position"], ["repeat","repeat"], ["size","size"]]), "drop")
+        .appendField("   ");
+    this.setPreviousStatement(true, "declaration");
+    this.setNextStatement(true, "declaration");
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
 
 
 
@@ -531,5 +546,13 @@ Blockly.JavaScript['css_align_declaration'] = function(block) {
   var result;
   if (drop == "content") {result = block.getFieldValue('content')} else if (drop == "items") {result = block.getFieldValue('items')} else if (drop == "self") {result = block.getFieldValue('self')}
   var code = 'align-' + drop + ": " + result + ";\n";
+  return code;
+};
+
+
+Blockly.JavaScript['css_background_declaration'] = function(block) {
+  var dropdown_drop = block.getFieldValue('drop');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
   return code;
 };
