@@ -302,7 +302,7 @@ if (this.getField('num') !== null) {this.getInput('line').removeField("num");}
 Blockly.JavaScript['css_block'] = function(block) {
 //var selec = block.getFieldValue('selectors'), arr = [];
 var selec = Blockly.JavaScript.statementToCode(block, 'selectors');
-var decl = Blockly.JavaScript.statementToCode(block, 'delarations');
+var decl = Blockly.JavaScript.statementToCode(block, 'declarations');
 if (selec == '') {
 selec = '*'
 } else {
@@ -371,13 +371,13 @@ var code = statements_element1 + change + statements_element2 + ', ';
 if (statements_element1 !== '' && statements_element2 !== '') {return code;} else {return '';}
 };
 
-Blockly.JavaScript['css_allelement_selectors'] = function(block) {
+Blockly.JavaScript['css_allelement_selector'] = function(block) {
   // TODO: Assemble JavaScript into code variable.
   var code = '*, ';
   return code;
 };
 
-Blockly.JavaScript['css_element_selectors'] = function(block) {
+Blockly.JavaScript['css_element_selector'] = function(block) {
   var dropdown_elementdrop = block.getFieldValue('elementDrop');
   // TODO: Assemble JavaScript into code variable.
   var code = dropdown_elementdrop + ', ';
