@@ -479,6 +479,7 @@ Blockly.Blocks['css_align_declaration'] = {
         .appendField("align")
         .appendField(new Blockly.FieldDropdown([["content","content"], ["items","items"], ["self","self"]]), "drop")
         .appendField("   ")
+        .appendField(new Blockly.FieldDropdown([["stretch","stretch"],["center","center"],["flex start","flex-start"],["flex end","flex-end"],["space between","space-between"],["space around","space-around"]]), "content");
         //.appendField(new Blockly.FieldDropdown([["EDIT","MUTATE"]]), "result");
     this.setPreviousStatement(true, "declaration");
     this.setNextStatement(true, "declaration");
@@ -502,7 +503,7 @@ if( this.getField('content') !== null && input !== "content" ){this.getInput('li
 else if( this.getField('items') !== null && input !== "items" ){this.getInput('line').removeField('items');}
 else if( this.getField('self') !== null && input !== "self" ){this.getInput('line').removeField('self');}
 
-if( input == "content" && this.getField('content') == null ) {this.getInput('line').appendField(new Blockly.FieldDropdown([["stretch","stretch"],["center","center"],["flex start","flex-start"],["flex end","flex-end"],["space between","space-between"],["space around","space-around"]]), "contents");}
+if( input == "content" && this.getField('content') == null ) {this.getInput('line').appendField(new Blockly.FieldDropdown([["stretch","stretch"],["center","center"],["flex start","flex-start"],["flex end","flex-end"],["space between","space-between"],["space around","space-around"]]), "content");}
 else if ( input == "items" && this.getField('items') == null) {this.getInput('line').appendField(new Blockly.FieldDropdown([["stretch","stretch"],["center","center"],["flex start","flex-start"],["flex end","flex-end"],["baseline","baseline"]]), "items");}
 else if ( input == "self" && this.getField('self') == null) {this.getInput('line').appendField(new Blockly.FieldDropdown([["auto","auto"],["stretch","stretch"],["center","center"],["flex start","flex-start"],["flex end","flex-end"]]), "self");}
       
