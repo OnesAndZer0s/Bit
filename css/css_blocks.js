@@ -526,9 +526,9 @@ else if ( input == "self" && this.getField('self') == null) {this.getInput('line
 
 
 Blockly.JavaScript['css_align_declaration'] = function(block) {
-  var dropdown_drop = block.getFieldValue('drop');
-  var dropdown_result = block.getFieldValue('result');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var drop = block.getFieldValue('drop');
+  var result;
+  if (drop == "content") {result = block.getFieldValue('content')} else if (drop == "items") {result = block.getFieldValue('items')} else if (drop == "self") {result = block.getFieldValue('self')}
+  var code = 'align-'+drop+": "+result;
   return code;
 };
