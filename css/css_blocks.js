@@ -301,7 +301,8 @@ if (this.getField('num') !== null) {this.getInput('line').removeField("num");}
 
 Blockly.JavaScript['css_block'] = function(block) {
 //var selec = block.getFieldValue('selectors'), arr = [];
-var selec = Blockly.JavaScript.statementToCode(block, 'selectors')
+var selec = Blockly.JavaScript.statementToCode(block, 'selectors');
+var decl = Blockly.JavaScript.statementToCode(block, 'delarations');
 if (selec == '') {
 selec = '*'
 } else {
@@ -309,7 +310,7 @@ selec = selec.substring(2, selec.length - 2);
 }
 
   //remove all NULL from list
-return '\n' + selec + ' {\n}';
+return '\n' + selec + ' {\n'+decl+'}';
 //should return (SELECTORS) \n{ (DECLARATIONS) \n}
   
   
@@ -529,6 +530,6 @@ Blockly.JavaScript['css_align_declaration'] = function(block) {
   var drop = block.getFieldValue('drop');
   var result;
   if (drop == "content") {result = block.getFieldValue('content')} else if (drop == "items") {result = block.getFieldValue('items')} else if (drop == "self") {result = block.getFieldValue('self')}
-  var code = 'align-'+drop+": "+result;
+  var code = 'align-' + drop + ": " + result + ";";
   return code;
 };
