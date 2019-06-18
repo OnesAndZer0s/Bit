@@ -498,7 +498,7 @@ var container = document.createElement('mutation');
     this.updateShape_(xmlElement.getAttribute('input'));
   },
   updateShape_: function(input) {
-this.getField("result").setValue(new Blockly.FieldDropdown([["WHAT","HELL"]]));
+this.setFieldValue(new Blockly.FieldDropdown([["YEET","WHAT"]]), "drop")
 }
 
 };
