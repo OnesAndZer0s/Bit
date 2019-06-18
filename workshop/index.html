@@ -24,19 +24,25 @@
 							<td height="10%">PREVIEW</td>
 						</tr>
 						<tr>
-							<td height="10%"></td>
+							<td height="10%">
+								<div id="blocklyPreview" style="width: 500px; height: 200px"></div>
+							</td>
 						</tr>
 						<tr>
 							<td height="10%">DEFINITION</td>
 						</tr>
 						<tr>
-							<td height="10%"></td>
+							<td height="10%">
+								<textarea id="blockDef"></textarea>
+							</td>
 						</tr>
 						<tr>
 							<td height="10%">CODE</td>
 						</tr>
 						<tr>
-							<td height="10%"></td>
+							<td height="10%">
+								<textarea id="blockCode"></textarea>
+							</td>
 						</tr>
 					</tbody>
 				</table>
@@ -44,22 +50,12 @@
 		</tr>
 	</tbody>	  
 </table>
-	  
-	  
-<!-- <div id="blocklyDefine" style="position: absolute; left: 5px; top: 20px; width: 500px; height: 870px">
-</div>
--->	  
-<div id="blocklyPreview" style="position: absolute; right: 5px; top: 20px; width: 500px; height: 200px">
-</div>
 
 <xml id="toolbox" style="display: none">
 	<category name="Selector"></category>
 	<category name="Declaration"></category>
 	<category name="Logic"></category>
 </xml>
-    
-	  <textarea id="blockDef"></textarea>
-	  <textarea id="blockCode"></textarea>
 <script>
 initBlockly("blocklyDefine", {
   toolbox: document.getElementById('toolbox'),
