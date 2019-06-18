@@ -475,7 +475,7 @@ Blockly.JavaScript['css_pseudo_selector'] = function(block) {
 
 Blockly.Blocks['css_align_declaration'] = {
   init: function() {
-    this.appendDummyInput()
+    this.appendDummyInput("line")
         .appendField("align")
         .appendField(new Blockly.FieldDropdown([["content","content"], ["items","items"], ["self","self"]]), "drop")
         .appendField("   ")
@@ -498,7 +498,11 @@ var container = document.createElement('mutation');
     this.updateShape_(xmlElement.getAttribute('input'));
   },
   updateShape_: function(input) {
-this.setFieldValue(new Blockly.FieldDropdown([["YEET","WHAT"]]), "drop")
+this.removeField("result");
+if (input == "content") {this.getInput('line').appendField(new Blockly.FieldDropdown([["WHAT","DEMO"]]), "result");}
+else if (input == "items") {this.getInput('line').appendField(new Blockly.FieldDropdown([["WHAT","DEMO"]]), "result");}
+else if (input == "self") {this.getInput('line').appendField(new Blockly.FieldDropdown([["WHAT","DEMO"]]), "result");}
+      
 }
 
 };
