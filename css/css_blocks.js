@@ -498,7 +498,7 @@ var container = document.createElement('mutation');
     this.updateShape_(xmlElement.getAttribute('input'));
   },
   updateShape_: function(input) {
-this.removeField("result");
+this.getInput('line').removeField("result");
 if (input == "content") {this.getInput('line').appendField(new Blockly.FieldDropdown([["WHAT","DEMO"]]), "result");}
 else if (input == "items") {this.getInput('line').appendField(new Blockly.FieldDropdown([["WHAT","DEMO"]]), "result");}
 else if (input == "self") {this.getInput('line').appendField(new Blockly.FieldDropdown([["WHAT","DEMO"]]), "result");}
