@@ -81,7 +81,7 @@ Blockly.JavaScript['workspace_setoutput'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
-  if (text_type == '') {text_type == null}
+  if (text_type !== '') {text_type = '"'+text_type+'"'} else {text_type = 'null';}
   var code = 'this.setOutput(' + checkbox_boolean + ', ' + text_type + ');\n';
   return code;
 };
