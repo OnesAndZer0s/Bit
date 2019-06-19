@@ -25,5 +25,5 @@ function initBlockly(div,options,updateFunc){
 workspace.addChangeListener(function(event) {
   var code = Blockly.JavaScript.workspaceToCode(workspace);+eval(updateFunc);
 });
-
+return workspace;
 }
