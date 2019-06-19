@@ -88,13 +88,13 @@ var define = initBlockly("blocklyDefine", {
 	}
 }, "document.getElementById('blockDef').value = code; console.log(code);");
 	
-  var main = define.newBlock('workshop_block_description');
+  var main = define.newBlock('workshop_block_description',"desc");
   main.initSvg();
   main.render();
   main.setDeletable(false);
   main.setMovable(false);
 	
-  define.centerOnBlock();
+  define.centerOnBlock("desc");
 
 initBlockly("blocklyPreview", {
   collapse : false, 
