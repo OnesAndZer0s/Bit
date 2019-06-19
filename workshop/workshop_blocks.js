@@ -61,3 +61,74 @@ Blockly.JavaScript['workspace_sethelpurl'] = function(block) {
   return code;
 };
 
+
+
+
+Blockly.Blocks['workspace_setoutput'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set output")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "boolean")
+        .appendField(new Blockly.FieldTextInput(""), "type");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);    
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setoutput'] = function(block) {
+  var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
+  var text_type = block.getFieldValue('type');
+  // RETURN CHANGES BASED ON 
+  if (text_type == '') {text_type == null}
+  var code = 'this.setOutput(' + checkbox_boolean + ', ' + text_type + ');\n';
+  return code;
+};
+
+
+Blockly.Blocks['workspace_setpreviousstatement'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set previous output")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "boolean")
+        .appendField(new Blockly.FieldTextInput(""), "type");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);    
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setpreviousstatement'] = function(block) {
+  var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
+  var text_type = block.getFieldValue('type');
+  // RETURN CHANGES BASED ON 
+  if (text_type == '') {text_type == null}
+  var code = 'this.setPreviousStatement(' + checkbox_boolean + ', ' + text_type + ');\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['workspace_setnextstatement'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set next output")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "boolean")
+        .appendField(new Blockly.FieldTextInput(""), "type");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);    
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setnextstatement'] = function(block) {
+  var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
+  var text_type = block.getFieldValue('type');
+  // RETURN CHANGES BASED ON 
+  if (text_type == '') {text_type == null}
+  var code = 'this.setNextStatement(' + checkbox_boolean + ', ' + text_type + ');\n';
+  return code;
+};
