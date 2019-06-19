@@ -39,3 +39,25 @@ Blockly.JavaScript['workspace_settooltip'] = function(block) {
   var code = 'this.setTooltip("'+quote(text_tooltip,'"')+'");\n';
   return code;
 };
+
+
+
+Blockly.Blocks['workspace_sethelpurl'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set help url")
+        .appendField(new Blockly.FieldTextInput(""), "helpurl");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_sethelpurl'] = function(block) {
+  var text_helpurl = block.getFieldValue('helpurl');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setHelpUrl("'+quote(text_helpurl,'"')+'");\n';
+  return code;
+};
+
