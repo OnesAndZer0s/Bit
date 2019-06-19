@@ -59,7 +59,7 @@
         <category name="Functions" custom="PROCEDURE"></category>
 </xml>
 <script>
-initBlockly("blocklyDefine", {
+var define = initBlockly("blocklyDefine", {
   toolbox: document.getElementById('toolbox'),
   collapse : false, 
 	comments : true, 
@@ -88,6 +88,12 @@ initBlockly("blocklyDefine", {
 	}
 }, "document.getElementById('blockDef').value = code; console.log(code);");
 	
+  var main = define.newBlock('workshop_block_description');
+  main.initSvg();
+  main.render();
+  main.setDeletable(false);
+  main.setMovable(false);
+
 initBlockly("blocklyPreview", {
   collapse : false, 
 	comments : false, 
