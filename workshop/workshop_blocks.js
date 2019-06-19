@@ -36,6 +36,6 @@ Blockly.Blocks['workspace_settooltip'] = {
 Blockly.JavaScript['workspace_settooltip'] = function(block) {
   var text_tooltip = block.getFieldValue('tooltip');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'this.setTooltip("+quote(text_tooltip,'"')+")';
+  var code = 'this.setTooltip("'+quote(text_tooltip,'"')+'");\n';
   return code;
 };
