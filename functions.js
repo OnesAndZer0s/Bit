@@ -29,5 +29,7 @@ return workspace;
 }
 
 function safeText(text){
-return text.replace(/\W/g, '_');
+var x = text.replace(/\W/g, '_');
+if (text == '') {x = "_";}
+return x
 }
