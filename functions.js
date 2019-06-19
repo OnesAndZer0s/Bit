@@ -33,3 +33,8 @@ var x = text.replace(/\W/g, '_');
 if (text == '') {x = "_";}
 return x
 }
+
+function quote(text,quoteType){
+
+return text;
+}
