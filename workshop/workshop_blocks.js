@@ -19,6 +19,6 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   var text_block_name = block.getFieldValue('block_name');
   var statements_init = Blockly.JavaScript.statementToCode(block, 'init');
   // TODO: Assemble JavaScript into code variable.
-  var code = "Blockly.Blocks['" + text_block_name + "'] = {};\u001FBlockly.JavaScript['" + text_block_name + "'] = function(block) {};";
+  var code = "Blockly.Blocks['" + safeText(text_block_name) + "'] = {};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) {};";
   return code;
 };
