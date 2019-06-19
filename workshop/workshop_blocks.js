@@ -104,7 +104,7 @@ Blockly.JavaScript['workspace_setpreviousstatement'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
-  if (text_type == '') {text_type == null}
+  if (text_type !== '') {text_type = '"'+text_type+'"'} else {text_type = 'null';}
   var code = 'this.setPreviousStatement(' + checkbox_boolean + ', ' + text_type + ');\n';
   return code;
 };
@@ -128,7 +128,7 @@ Blockly.JavaScript['workspace_setnextstatement'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
-  if (text_type == '') {text_type == null}
+  if (text_type !== '') {text_type = '"'+text_type+'"'} else {text_type = 'null';}
   var code = 'this.setNextStatement(' + checkbox_boolean + ', ' + text_type + ');\n';
   return code;
 };
