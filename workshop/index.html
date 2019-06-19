@@ -95,6 +95,7 @@ var define = initBlockly("blocklyDefine", {
   main.setMovable(false);
 	
   define.centerOnBlock("desc");
+  define.addChangeListener(Blockly.Events.disableOrphans);
 
 initBlockly("blocklyPreview", {
   collapse : false, 
