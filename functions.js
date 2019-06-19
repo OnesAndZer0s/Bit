@@ -27,3 +27,7 @@ workspace.addChangeListener(function(event) {
 });
 return workspace;
 }
+
+function safeText(text){
+return text.replace(/\W/g, '_');
+}
