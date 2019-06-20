@@ -82,7 +82,6 @@ function HSLtoRGB(h, s, l) {
 
   return [r, g, b ];
 }
-}
 
 function toHexadecimal(inputString,type){
 if (type == "rgb") {
