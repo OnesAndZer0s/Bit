@@ -1,3 +1,5 @@
+var generate;
+
 Blockly.Blocks['workshop_block_description'] = {
   init: function() {
     this.appendDummyInput()
@@ -14,14 +16,7 @@ Blockly.Blocks['workshop_block_description'] = {
 Blockly.JavaScript['workshop_block_description'] = function(block) {
   var text_block_name = block.getFieldValue('block_name');
   var statements_init = Blockly.JavaScript.statementToCode(block, 'init');
-console.log(main);
-  eval("Blockly.Blocks['workshop_demo'] = { init: function() {" + statements_init + "} };")
-  main.initSvg();
-  main.render();
-  main.setDeletable(false);
-  main.setMovable(true);
-	
-//   pre.centerOnBlock("pre");
+generate = statements_init;
   
   var code = "Blockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "}\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) {};";
   return code;
