@@ -23,7 +23,7 @@ function initBlockly(div,options,updateFunc){
   onresize();
   Blockly.svgResize(workspace);
 workspace.addChangeListener(function(event) {
-  var code = Blockly.JavaScript.workspaceToCode(workspace);+eval(updateFunc);
+  var code = Blockly.JavaScript.workspaceToCode(workspace); updateFunc();
 });
 return workspace;
 }
