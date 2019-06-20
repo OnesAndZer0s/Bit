@@ -80,11 +80,6 @@
 </xml>
 <script>
   
-var main = pre.newBlock('workshop_demo',"pre");
-  main.initSvg();
-  main.render();
-
-pre.centerOnBlock("pre");
 var pre = initBlockly("blocklyPreview", {
   collapse : false, 
 	comments : false, 
@@ -113,7 +108,13 @@ var pre = initBlockly("blocklyPreview", {
 	}
 });
 	
+var main = pre.newBlock('workshop_demo',"pre");
+  main.initSvg();
+  main.render();
+
+pre.centerOnBlock("pre");
 	
+
 var define = initBlockly("blocklyDefine", {
   toolbox: document.getElementById('toolbox'),
   collapse : false, 
