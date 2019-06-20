@@ -1,5 +1,3 @@
-var generate;
-
 Blockly.Blocks['workshop_block_description'] = {
   init: function() {
     this.appendDummyInput()
@@ -16,9 +14,8 @@ Blockly.Blocks['workshop_block_description'] = {
 Blockly.JavaScript['workshop_block_description'] = function(block) {
   var text_block_name = block.getFieldValue('block_name');
   var statements_init = Blockly.JavaScript.statementToCode(block, 'init');
-generate = statements_init;
   
-  var code = "Blockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "}\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) {};";
+  var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "}\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) {};";
   return code;
 };
 
