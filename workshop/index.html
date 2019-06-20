@@ -140,6 +140,7 @@ var c = code.split('\u001F');
 document.getElementById('blockDef').value = c[1]; 
 document.getElementById('blockCode').value =  c[2]; 
 eval(c[1]);
+eval(c[2]);
 
 if (main !== undefined) {main.dispose()};
 var main = pre.newBlock(c[0],"pre");
