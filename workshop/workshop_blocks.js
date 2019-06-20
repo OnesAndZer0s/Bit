@@ -513,7 +513,7 @@ Blockly.JavaScript['workshop_appendvalueinput'] = function(block) {
   var text_name = block.getFieldValue('name');
   var statements_fields = Blockly.JavaScript.statementToCode(block, 'fields');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'this.appendDummyInput("'+text_name+'")'+statements_fields+';\n';
+  var code = 'this.appendValueInput("'+text_name+'")'+statements_fields+';\n';
   return code;
 };
 
