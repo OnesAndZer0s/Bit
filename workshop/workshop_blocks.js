@@ -182,8 +182,6 @@ line.appendField(new Blockly.FieldNumber(0, 0, 360), "h");
 line.appendField(new Blockly.FieldNumber(0, 0, 100), "s");
 line.appendField(new Blockly.FieldNumber(0, 0, 100), "l");
 }   
-
-
 }
 };
 Blockly.JavaScript['workshop_setcolor'] = function(block) {
@@ -196,5 +194,27 @@ if (dropdown_type == "hsl") {color = '"#' + toHexadecimal([block.getFieldValue('
 
 
 var code = 'this.setColour('+color+');\n';
+  return code;
+};
+
+
+
+
+Blockly.Blocks['workspace_setcomment'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set comment")
+        .appendField(new Blockly.FieldTextInput(""), "comment");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setcomment'] = function(block) {
+  var text_comment = block.getFieldValue('comment');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setCommentText("'+quote(text_comment)+'");\n';
   return code;
 };
