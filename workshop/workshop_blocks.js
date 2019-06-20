@@ -301,3 +301,45 @@ Blockly.JavaScript['workspace_setinputsinline'] = function(block) {
   var code = 'this.setInputsInline('+text_inline+');\n';
   return code;
 };
+
+
+
+Blockly.Blocks['workspace_setinsertionmarker'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set insert marker")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "insert");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("once set, it cannot be undone");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setinsertionmarker'] = function(block) {
+  var text_insert = block.getFieldValue('insert') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setInsertionMarker('+text_insert+');\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['workspace_setmoveable'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set moveable")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "move");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setmoveable'] = function(block) {
+  var text_move = block.getFieldValue('move') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setMovable('+text_move+');\n';
+  return code;
+};
