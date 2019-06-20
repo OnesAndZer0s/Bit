@@ -295,7 +295,7 @@ Blockly.Blocks['workspace_setinputsinline'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setdisabled'] = function(block) {
+Blockly.JavaScript['workspace_setinputsinline'] = function(block) {
   var text_inline = block.getFieldValue('inline') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setInputsInline('+text_inline+');\n';
