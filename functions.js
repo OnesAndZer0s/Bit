@@ -62,7 +62,7 @@ function HSLtoRGB(h, s, l) {
       r = 0,
       g = 0,
       b = 0;
-}
+
  if (0 <= h && h < 60) {
     r = c; g = x; b = 0;
   } else if (60 <= h && h < 120) {
@@ -81,6 +81,7 @@ function HSLtoRGB(h, s, l) {
   b = Math.round((b + m) * 255);
 
   return [r, g, b ];
+}
 }
 
 function toHexadecimal(inputString,type){
