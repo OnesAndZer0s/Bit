@@ -26,7 +26,7 @@ var func = eval(updateFunc);
 console.log(func);
 console.log(updateFunc);
 workspace.addChangeListener(function(event) {
-  var code = Blockly.JavaScript.workspaceToCode(workspace); if (func !== undefined) {func()};
+  var code = Blockly.JavaScript.workspaceToCode(workspace); if (func !== undefined) {func(code);}
 });
 return workspace;
 }
