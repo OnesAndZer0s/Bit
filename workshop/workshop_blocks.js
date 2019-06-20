@@ -390,3 +390,23 @@ Blockly.JavaScript['workspace_setwarningtext'] = function(block) {
   return code;
 };
 
+
+
+Blockly.Blocks['workspace_setcollapsed'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set collapsed")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "collapse");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setcollapsed'] = function(block) {
+  var text_collapse = block.getFieldValue('collapse') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setCollapsed('+text_collapse+');\n';
+  return code;
+};
