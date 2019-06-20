@@ -190,6 +190,10 @@ Blockly.JavaScript['workshop_setcolor'] = function(block) {
   var dropdown_type = block.getFieldValue('type'), color;
 if (dropdown_type == "hue") {color = block.getFieldValue('hue');}
 if (dropdown_type == "hex") {color = '"#' + toHexadecimal(block.getFieldValue('hex')) + '"';}
+if (dropdown_type == "rgb") {color = '"#' + toHexadecimal([block.getFieldValue('r'),block.getFieldValue('g'),block.getFieldValue('b')], "rgb") + '"';}
+if (dropdown_type == "hsl") {color = '"#' + toHexadecimal([block.getFieldValue('h'),block.getFieldValue('s'),block.getFieldValue('l')], "hsl") + '"';}
+
+
 
 var code = 'this.setColour('+color+');\n';
   return code;
