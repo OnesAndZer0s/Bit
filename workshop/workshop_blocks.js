@@ -171,9 +171,6 @@ line.appendField(new Blockly.FieldNumber(0, 0, 360), "hue");
 }
     if (input == "hex" && this.getField('hex') == null) {
 line.appendField(new Blockly.FieldTextInput("000000"), "hex");
-this.getField('hex').setValidator(function(text) {
-//this.sourceBlock_.getField("hex").text = toHexadecimal(text);
-this.sourceBlock_.getField("hex").setValue(toHexadecimal(text));
 });
 }   
     if (input == "rgb" && this.getField('r') == null) {
@@ -193,7 +190,7 @@ line.appendField(new Blockly.FieldNumber(0, 0, 100), "l");
 Blockly.JavaScript['workshop_setcolor'] = function(block) {
   var dropdown_type = block.getFieldValue('type'), color;
 if (dropdown_type == "hue") {color = block.getFieldValue('hue');}
-if (dropdown_type == "hex") {color = '"' + toHexadecimal(block.getFieldValue('hex')) + '"';}
+if (dropdown_type == "hex") {color = '"#' + toHexadecimal(block.getFieldValue('hex')) + '"';}
 
 var code = 'this.setColour('+color+');\n';
   return code;
