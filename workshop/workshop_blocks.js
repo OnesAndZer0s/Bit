@@ -193,7 +193,7 @@ line.appendField(new Blockly.FieldNumber(0, 0, 100), "l");
 Blockly.JavaScript['workshop_setcolor'] = function(block) {
   var dropdown_type = block.getFieldValue('type'), color;
 if (dropdown_type == "hue") {color = block.getFieldValue('hue');}
-if (dropdown_type == "hex") {color = block.getFieldValue('hex');}
+if (dropdown_type == "hex") {color = '"' + block.getFieldValue('hex'); + '"'}
 
 var code = 'this.setColour('+color+');\n';
   return code;
