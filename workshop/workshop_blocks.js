@@ -396,7 +396,7 @@ Blockly.Blocks['workspace_setcollapsed'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set collapsed")
-        .appendField(new Blockly.FieldCheckbox("TRUE"), "collapse");
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "collapse");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(210);
