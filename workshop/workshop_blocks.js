@@ -172,7 +172,8 @@ line.appendField(new Blockly.FieldNumber(0, 0, 360), "hue");
     if (input == "hex" && this.getField('hex') == null) {
 line.appendField(new Blockly.FieldTextInput("000000"), "hex");
 this.getField('hex').setValidator(function(text) {
-this.sourceBlock_.getField("hex").text = toHexadecimal(text);
+//this.sourceBlock_.getField("hex").text = toHexadecimal(text);
+console.log(this.sourceBlock_.getField("hex"));
 });
 }   
     if (input == "rgb" && this.getField('r') == null) {
