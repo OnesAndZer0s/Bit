@@ -22,8 +22,9 @@ function initBlockly(div,options,updateFunc){
   window.addEventListener('resize', onresize, false);
   onresize();
   Blockly.svgResize(workspace);
+var func = updateFunc;
 workspace.addChangeListener(function(event) {
-  var code = Blockly.JavaScript.workspaceToCode(workspace); updateFunc();
+  var code = Blockly.JavaScript.workspaceToCode(workspace); func(code);
 });
 return workspace;
 }
