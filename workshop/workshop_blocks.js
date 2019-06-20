@@ -56,8 +56,8 @@ Blockly.Blocks['workspace_sethelpurl'] = {
 };
 Blockly.JavaScript['workspace_sethelpurl'] = function(block) {
   var text_helpurl = block.getFieldValue('helpurl');
-  // TODO: Assemble JavaScript into code variable.
-  var code = 'this.setHelpUrl("'+quote(text_helpurl,'"')+'");\n';
+  if (text_helpurl !== '') {text_helpurl = '"'+quote(text_helpurl)+'"'} else {text_helpurl = 'null';}
+  var code = 'this.setHelpUrl('+text_helpurl+');\n';
   return code;
 };
 
@@ -81,7 +81,7 @@ Blockly.JavaScript['workspace_setoutput'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
-  if (text_type !== '') {text_type = '"'+text_type+'"'} else {text_type = 'null';}
+  if (text_type !== '') {text_type = '"'+quote(text_type)+'"'} else {text_type = 'null';}
   var code = 'this.setOutput(' + checkbox_boolean + ', ' + text_type + ');\n';
   return code;
 };
@@ -104,7 +104,7 @@ Blockly.JavaScript['workspace_setpreviousstatement'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
-  if (text_type !== '') {text_type = '"'+text_type+'"'} else {text_type = 'null';}
+  if (text_type !== '') {text_type = '"'+quote(text_type)+'"'} else {text_type = 'null';}
   var code = 'this.setPreviousStatement(' + checkbox_boolean + ', ' + text_type + ');\n';
   return code;
 };
@@ -128,7 +128,7 @@ Blockly.JavaScript['workspace_setnextstatement'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
-  if (text_type !== '') {text_type = '"'+text_type+'"'} else {text_type = 'null';}
+  if (text_type !== '') {text_type = '"'+quote(text_type)+'"'} else {text_type = 'null';}
   var code = 'this.setNextStatement(' + checkbox_boolean + ', ' + text_type + ');\n';
   return code;
 };
@@ -214,8 +214,8 @@ Blockly.Blocks['workspace_setcomment'] = {
 };
 Blockly.JavaScript['workspace_setcomment'] = function(block) {
   var text_comment = block.getFieldValue('comment');
-    if (text_comment == "") {text_comment = 'null';}else{text_comment = '"'+quote(text_comment)+'"';}
-  var code = 'this.setCommentText('+text_comment)+');\n';
+  if (text_comment !== '') {text_comment = '"'+quote(text_type)+'"'} else {text_comment = 'null';}
+  var code = 'this.setCommentText('+text_comment+');\n';
   return code;
 };
 
@@ -383,7 +383,7 @@ Blockly.Blocks['workspace_setwarningtext'] = {
 Blockly.JavaScript['workspace_setwarningtext'] = function(block) {
   var text_warning = block.getFieldValue('warning'),
       text_id = block.getFieldValue('id');
-    if (text_warning == "") {text_warning = 'null';}else{text_warning = '"'+text_warning+'"';}
+  if (text_warning !== '') {text_warning = '"'+quote(text_warning)+'"'} else {text_warning = 'null';}
   if (text_id !== "") {text_id = ',"'+text_id+'"';}
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setWarningText('+text_warning+text_id+');\n';
