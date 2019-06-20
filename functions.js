@@ -42,14 +42,16 @@ return text;
 function toHexadecimal(inputString,type){
 if (type == "rgb") {
 inputString = inputString.map(function(cur){
+if (typeof cur == "number") {
 var hex = Number(cur).toString(16);
   if (hex.length < 2) {
        hex = "0" + hex;
   }
+} else {var hex = "00";}
   return hex;
 });
 console.log(inputString);
-return inputString;
+return inputString.join('');
 }
 else if (type == "hsl") {
 return ""
