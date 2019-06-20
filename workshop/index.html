@@ -79,6 +79,12 @@
         <category name="Functions" custom="PROCEDURE"></category>
 </xml>
 <script>
+  
+var main = pre.newBlock('workshop_demo',"pre");
+  main.initSvg();
+  main.render();
+
+pre.centerOnBlock("pre");
 var pre = initBlockly("blocklyPreview", {
   collapse : false, 
 	comments : false, 
@@ -142,8 +148,8 @@ document.getElementById('blockCode').value =  c[2];
 eval(c[1]);
 eval(c[2]);
 
-if (main !== undefined) {main.dispose()};
-var main = pre.newBlock(c[0],"pre");
+main.dispose();
+main = pre.newBlock(c[0],"pre");
 main.initSvg();
 main.render();
 console.log(code);
@@ -161,12 +167,6 @@ console.log(code);
 	
 
   pre.addChangeListener(Blockly.Events.disableOrphans);
-  
-var main = pre.newBlock('workshop_demo',"pre");
-  main.initSvg();
-  main.render();
-
-pre.centerOnBlock("pre");
 	
 	
 </script>
