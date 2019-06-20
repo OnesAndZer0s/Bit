@@ -234,7 +234,7 @@ Blockly.Blocks['workspace_setconnectionshidden'] = {
   }
 };
 Blockly.JavaScript['workspace_setconnectionshidden'] = function(block) {
-  var text_connections = block.getFieldValue('connections');
+  var text_connections = block.getFieldValue('connections') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setConnectionsHidden("'+text_connections+'");\n';
   return code;
@@ -255,7 +255,7 @@ Blockly.Blocks['workspace_setdeletable'] = {
   }
 };
 Blockly.JavaScript['workspace_setdeletable'] = function(block) {
-  var text_delete = block.getFieldValue('delete');
+  var text_delete = block.getFieldValue('delete') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setDeletable("'+text_delete+'");\n';
   return code;
@@ -276,8 +276,28 @@ Blockly.Blocks['workspace_setdisabled'] = {
   }
 };
 Blockly.JavaScript['workspace_setdisabled'] = function(block) {
-  var text_disabled = block.getFieldValue('disabled');
+  var text_disabled = block.getFieldValue('disabled') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setDisabled("'+text_disabled+'");\n';
+  return code;
+};    
+
+
+Blockly.Blocks['workspace_setinputsinline'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set inputs inline")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "inline");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setdisabled'] = function(block) {
+  var text_inline = block.getFieldValue('inline') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setInputsInline("'+text_inline+'");\n';
   return code;
 };
