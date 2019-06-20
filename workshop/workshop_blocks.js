@@ -456,7 +456,7 @@ Blockly.Blocks['workshop_appenddummyinput'] = {
         .setCheck("field");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(210);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -465,7 +465,7 @@ Blockly.JavaScript['workshop_appenddummyinput'] = function(block) {
   var text_name = block.getFieldValue('name');
   var statements_fields = Blockly.JavaScript.statementToCode(block, 'fields');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'this.appendDummyInput('+text_name+')'+statements_fields+';\n';
+  var code = 'this.appendDummyInput("'+text_name+'")'+statements_fields+';\n';
   return code;
 };
 
@@ -480,7 +480,7 @@ Blockly.Blocks['workshop_appendstatementinput'] = {
         .setCheck("field");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(210);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -489,7 +489,7 @@ Blockly.JavaScript['workshop_appendstatementinput'] = function(block) {
   var text_name = block.getFieldValue('name');
   var statements_fields = Blockly.JavaScript.statementToCode(block, 'fields');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'this.appendStatementInput('+text_name+')'+statements_fields+';\n';
+  var code = 'this.appendStatementInput("'+text_name+'")'+statements_fields+';\n';
   return code;
 };
 
@@ -504,7 +504,7 @@ Blockly.Blocks['workshop_appendvalueinput'] = {
         .setCheck("field");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(210);
+    this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
   }
@@ -513,9 +513,47 @@ Blockly.JavaScript['workshop_appendvalueinput'] = function(block) {
   var text_name = block.getFieldValue('name');
   var statements_fields = Blockly.JavaScript.statementToCode(block, 'fields');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'this.appendDummyInput('+text_name+')'+statements_fields+';\n';
+  var code = 'this.appendDummyInput("'+text_name+'")'+statements_fields+';\n';
+  return code;
+};
+
+
+Blockly.Blocks['workshop_fieldsetvisible'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set visible")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "visible");
+    this.setPreviousStatement(true, "field");
+    this.setNextStatement(true, "field");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workshop_fieldsetvisible'] = function(block) {
+  var text_visible = block.getFieldValue('visible') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n   .setVisible('+text_visible+')\n';
   return code;
 };
 
 
 
+Blockly.Blocks['workshop_fieldsetalign'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set align")
+        .appendField(new Blockly.FieldDropdown([["left","Blockly.ALIGN_LEFT"], ["center","Blockly.ALIGN_CENTRE"], ["right","Blockly.ALIGN_RIGHT"]]), "align");
+    this.setPreviousStatement(true, "field");
+    this.setNextStatement(true, "field");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workshop_fieldsetalign'] = function(block) {
+  var text_align = block.getFieldValue('align');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n   .setAlign('+text_align+')\n';
+  return code;
+};
