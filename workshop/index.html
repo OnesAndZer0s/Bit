@@ -135,7 +135,7 @@ var define = initBlockly("blocklyDefine", {
 		minScale : 0.2, 
 		scaleSpeed : 1.2
 	}
-}, "var c = code.split('\u001F'); document.getElementById('blockDef').value = c[0]; document.getElementById('blockCode').value =  c[1]; console.log(code);");
+}, function() {var c = code.split('\u001F'); document.getElementById('blockDef').value = c[0]; document.getElementById('blockCode').value =  c[1]; console.log(code);});
 	
   var main = define.newBlock('workshop_block_description',"desc");
   main.initSvg();
