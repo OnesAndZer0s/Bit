@@ -140,7 +140,7 @@ var c = code.split('\u001F');
 document.getElementById('blockDef').value = c[0]; 
 document.getElementById('blockCode').value =  c[1]; 
 eval(c[0]);
-main.dispose();
+if (main == undefined) {main.dispose()};
 var main = pre.newBlock('workshop_demo',"pre");
 main.initSvg();
 main.render();
