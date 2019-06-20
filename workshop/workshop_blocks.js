@@ -533,7 +533,7 @@ Blockly.Blocks['workshop_fieldsetvisible'] = {
 Blockly.JavaScript['workshop_fieldsetvisible'] = function(block) {
   var text_visible = block.getFieldValue('visible') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n   .setVisible('+text_visible+')';
+  var code = '\n.setVisible('+text_visible+')';
   return code;
 };
 
@@ -554,6 +554,6 @@ Blockly.Blocks['workshop_fieldsetalign'] = {
 Blockly.JavaScript['workshop_fieldsetalign'] = function(block) {
   var text_align = block.getFieldValue('align');
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n   .setAlign('+text_align+')';
+  var code = '\n.setAlign('+text_align+')';
   return code;
 };
