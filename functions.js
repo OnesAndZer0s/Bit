@@ -42,7 +42,7 @@ return text;
 function toHexadecimal(inputString,type){
 if (type == "rgb") {
 inputString = inputString.map(function(cur){
-if (typeof cur == "number") {
+if (Number(cur) !== NaN) {
 var hex = Number(cur).toString(16);
   if (hex.length < 2) {
        hex = "0" + hex;
