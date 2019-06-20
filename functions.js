@@ -41,13 +41,14 @@ return text;
 
 function toHexadecimal(inputString,type){
 if (type == "rgb") {
-inputString.map(function(cur){
+inputString = inputString.map(function(cur){
 var hex = Number(cur).toString(16);
   if (hex.length < 2) {
        hex = "0" + hex;
   }
   return hex;
 });
+console.log(inputString);
 return inputString;
 }
 else if (type == "hsl") {
