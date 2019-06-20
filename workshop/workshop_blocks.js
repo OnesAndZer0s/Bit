@@ -522,7 +522,7 @@ Blockly.Blocks['workshop_fieldsetvisible'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set visible")
-        .appendField(new Blockly.FieldCheckbox("FALSE"), "visible");
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "visible");
     this.setPreviousStatement(true, "field");
     this.setNextStatement(true, "field");
     this.setColour(180);
