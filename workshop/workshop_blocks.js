@@ -343,3 +343,49 @@ Blockly.JavaScript['workspace_setmoveable'] = function(block) {
   var code = 'this.setMovable('+text_move+');\n';
   return code;
 };
+
+
+
+Blockly.Blocks['workspace_setshadow'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set shadow")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "shadow");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setshadow'] = function(block) {
+  var text_shadow = block.getFieldValue('shadow') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setShadow('+text_shadow+');\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['workspace_setwarningtext'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set warning text")
+        .appendField(new Blockly.FieldTextInput(""), "warning")
+        .appendField(new Blockly.FieldTextInput("id"), "id");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setwarningtext'] = function(block) {
+  var text_warning = block.getFieldValue('warning'),
+      text_id = block.getFieldValue('warning');
+  if (text_id !== "") {text_id = ',"'+text_id+'"';}
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setWarningText("'+text_warning+'"'+text_id+');\n';
+  return code;
+};
+
