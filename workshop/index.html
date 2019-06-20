@@ -117,7 +117,7 @@ var define = initBlockly("blocklyDefine", {
   define.centerOnBlock("desc");
   define.addChangeListener(Blockly.Events.disableOrphans);
 
-initBlockly("blocklyPreview", {
+var pre = initBlockly("blocklyPreview", {
   collapse : false, 
 	comments : false, 
 	disable : false, 
@@ -129,6 +129,12 @@ initBlockly("blocklyPreview", {
 	scrollbars : true, 
 	sounds : true, 
 	oneBasedIndex : false, 
+	grid : {
+		spacing : 25, 
+		length : 1, 
+		colour : '#555', 
+		snap : false
+	}, 
 	zoom : {
 		controls : true, 
 		wheel : true, 
@@ -138,6 +144,16 @@ initBlockly("blocklyPreview", {
 		scaleSpeed : 1.2
 	}
 });
+  pre.addChangeListener(Blockly.Events.disableOrphans);
+  var main = pre.newBlock('workshop_demo',"pre");
+  main.initSvg();
+  main.render();
+  main.setDeletable(false);
+  main.setMovable(true);
+	
+  pre.centerOnBlock("pre");
+	
+	
 </script>
   </body>
 
