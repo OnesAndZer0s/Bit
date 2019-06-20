@@ -146,12 +146,13 @@ var pre = initBlockly("blocklyPreview", {
 });
   pre.addChangeListener(Blockly.Events.disableOrphans);
   var main = pre.newBlock('workshop_demo',"pre");
+  eval("Blockly.Blocks['workshop_demo'] = { init: function() {" + generate + "} };")
   main.initSvg();
   main.render();
   main.setDeletable(false);
   main.setMovable(true);
 	
-  pre.centerOnBlock("pre");
+pre.centerOnBlock("pre");
 	
 	
 </script>
