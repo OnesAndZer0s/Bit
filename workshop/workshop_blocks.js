@@ -382,10 +382,11 @@ Blockly.Blocks['workspace_setwarningtext'] = {
 };
 Blockly.JavaScript['workspace_setwarningtext'] = function(block) {
   var text_warning = block.getFieldValue('warning'),
-      text_id = block.getFieldValue('warning');
+      text_id = block.getFieldValue('id');
+    if (text_warning == "") {text_warning = 'null';}else{text_warning = '"'+text_warning+'"';}
   if (text_id !== "") {text_id = ',"'+text_id+'"';}
   // TODO: Assemble JavaScript into code variable.
-  var code = 'this.setWarningText("'+text_warning+'"'+text_id+');\n';
+  var code = 'this.setWarningText('+text_warning+text_id+');\n';
   return code;
 };
 
