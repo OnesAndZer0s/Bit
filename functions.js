@@ -38,3 +38,11 @@ function quote(text,quoteType){
 
 return text;
 }
+
+function toHexadecimal(inputString){
+for (var i = 0, x = [], num = 0; i-num <= 5; i++) {
+if (inputString[i] == undefined) {x.push("0");} else
+if (/[0-9A-Fa-f]/g.test(inputString[i])) {x.push(inputString[i].toUpperCase());} else {num++;}
+}
+return x.join('');
+}
