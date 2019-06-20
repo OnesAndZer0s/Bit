@@ -108,11 +108,11 @@ var pre = initBlockly("blocklyPreview", {
 	}
 });
 	
-// var main = pre.newBlock('workshop_demo',"pre");
-//   main.initSvg();
-//   main.render();
+var preBlock = pre.newBlock('workshop_demo',"pre");
+preBlock.initSvg();
+preBlock.render();
 
-// pre.centerOnBlock("pre");
+pre.centerOnBlock("pre");
 	
 
 var define = initBlockly("blocklyDefine", {
@@ -154,10 +154,10 @@ console.log(c[2]);
 eval(c[1]);
 eval(c[2]);
 
-main.dispose();
-main = pre.newBlock(c[0],"pre");
-main.initSvg();
-main.render();
+preBlock.dispose();
+preBlock = pre.newBlock(c[0],"pre");
+preBlock.initSvg();
+preBlock.render();
 console.log(code);
 }
 });
