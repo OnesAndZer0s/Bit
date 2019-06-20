@@ -21,7 +21,7 @@ console.log(main);
   main.setDeletable(false);
   main.setMovable(true);
 	
-  pre.centerOnBlock("pre");
+//   pre.centerOnBlock("pre");
   
   var code = "Blockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "}\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) {};";
   return code;
