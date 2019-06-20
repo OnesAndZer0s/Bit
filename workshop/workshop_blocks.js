@@ -21,6 +21,20 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
 
 
 
+
+Blockly.Blocks['workshop_demo'] = {
+  init: function() {
+  }
+};
+Blockly.JavaScript['workshop_demo'] = function(block) {
+  return "If you want to look through the code, at least give yourself a challenge and look through my programming.";
+};
+
+
+
+
+
+
 Blockly.Blocks['workspace_settooltip'] = {
   init: function() {
     this.appendDummyInput()
