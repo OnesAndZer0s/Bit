@@ -51,7 +51,7 @@ var hex = Number(cur).toString(16);
 }).join('');
 }
 
-function HSLToRGB(h, s, l) {
+function HSLtoRGB(h, s, l) {
   var r, g, b;
 
   if (s == 0) {
