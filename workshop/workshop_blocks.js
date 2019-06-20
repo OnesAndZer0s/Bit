@@ -139,7 +139,8 @@ Blockly.Blocks['workshop_setcolor'] = {
   init: function() {
     this.appendDummyInput("line")
         .appendField("set color")
-        .appendField(new Blockly.FieldDropdown([["hue","hue"], ["hex","hex"], ["RGB","rgb"], ["HSL","hsl"]]), "type");
+        .appendField(new Blockly.FieldDropdown([["hue","hue"], ["hex","hex"], ["RGB","rgb"], ["HSL","hsl"]]), "type")
+        .appendField(new Blockly.FieldNumber(0, 0, 360), "hue");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(210);
@@ -170,7 +171,7 @@ line.appendField(new Blockly.FieldNumber(0, 0, 360), "hue");
 }
     if (input == "hex" && this.getField('hex') == null) {
 line.appendField(new Blockly.FieldTextInput("000000"), "hex");
-line.getField('hex').setValidator(function(option) {
+this.getField('hex').setValidator(function(option) {
 console.log(this.getField('hex') !== null);
 });
 }   
