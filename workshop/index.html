@@ -108,11 +108,11 @@ var pre = initBlockly("blocklyPreview", {
 	}
 });
 	
-var main = pre.newBlock('workshop_demo',"pre");
-  main.initSvg();
-  main.render();
+// var main = pre.newBlock('workshop_demo',"pre");
+//   main.initSvg();
+//   main.render();
 
-pre.centerOnBlock("pre");
+// pre.centerOnBlock("pre");
 	
 
 var define = initBlockly("blocklyDefine", {
@@ -146,6 +146,10 @@ var define = initBlockly("blocklyDefine", {
 var c = code.split('\u001F'); 
 document.getElementById('blockDef').value = c[1]; 
 document.getElementById('blockCode').value =  c[2]; 
+console.log(c[0]);
+console.log(c[1]);
+console.log(c[2]);
+	
 eval(c[1]);
 eval(c[2]);
 
