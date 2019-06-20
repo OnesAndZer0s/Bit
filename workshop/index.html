@@ -137,12 +137,12 @@ var define = initBlockly("blocklyDefine", {
 	}
 }, function(code) {
 var c = code.split('\u001F'); 
-document.getElementById('blockDef').value = c[0]; 
-document.getElementById('blockCode').value =  c[1]; 
-eval(c[0]);
+document.getElementById('blockDef').value = c[1]; 
+document.getElementById('blockCode').value =  c[2]; 
+eval(c[1]);
 
 if (main !== undefined) {main.dispose()};
-var main = pre.newBlock('workshop_demo',"pre");
+var main = pre.newBlock(c[0],"pre");
 main.initSvg();
 main.render();
 console.log(code);
