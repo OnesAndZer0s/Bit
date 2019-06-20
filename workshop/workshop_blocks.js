@@ -214,8 +214,8 @@ Blockly.Blocks['workspace_setcomment'] = {
 };
 Blockly.JavaScript['workspace_setcomment'] = function(block) {
   var text_comment = block.getFieldValue('comment');
-  // TODO: Assemble JavaScript into code variable.
-  var code = 'this.setCommentText("'+quote(text_comment)+'");\n';
+    if (text_comment == "") {text_comment = 'null';}else{text_comment = '"'+quote(text_comment)+'"';}
+  var code = 'this.setCommentText('+text_comment)+');\n';
   return code;
 };
 
