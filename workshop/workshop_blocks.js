@@ -35,7 +35,7 @@ Blockly.JavaScript['workshop_demo'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_settooltip'] = {
+Blockly.Blocks['workshop_settooltip'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set tooltip")
@@ -47,7 +47,7 @@ Blockly.Blocks['workspace_settooltip'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_settooltip'] = function(block) {
+Blockly.JavaScript['workshop_settooltip'] = function(block) {
   var text_tooltip = block.getFieldValue('tooltip');
   if (text_tooltip !== '') {text_tooltip = '"'+quote(text_tooltip)+'"'} else {text_tooltip = 'null';}
   var code = 'this.setTooltip('+text_tooltip+');\n';
@@ -56,7 +56,7 @@ Blockly.JavaScript['workspace_settooltip'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_sethelpurl'] = {
+Blockly.Blocks['workshop_sethelpurl'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set help url")
@@ -68,7 +68,7 @@ Blockly.Blocks['workspace_sethelpurl'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_sethelpurl'] = function(block) {
+Blockly.JavaScript['workshop_sethelpurl'] = function(block) {
   var text_helpurl = block.getFieldValue('helpurl');
   if (text_helpurl !== '') {text_helpurl = '"'+quote(text_helpurl)+'"'} else {text_helpurl = 'null';}
   var code = 'this.setHelpUrl('+text_helpurl+');\n';
@@ -78,7 +78,7 @@ Blockly.JavaScript['workspace_sethelpurl'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setoutput'] = {
+Blockly.Blocks['workshop_setoutput'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set output")
@@ -91,7 +91,7 @@ Blockly.Blocks['workspace_setoutput'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setoutput'] = function(block) {
+Blockly.JavaScript['workshop_setoutput'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
@@ -101,7 +101,7 @@ Blockly.JavaScript['workspace_setoutput'] = function(block) {
 };
 
 
-Blockly.Blocks['workspace_setpreviousstatement'] = {
+Blockly.Blocks['workshop_setpreviousstatement'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set previous output")
@@ -114,7 +114,7 @@ Blockly.Blocks['workspace_setpreviousstatement'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setpreviousstatement'] = function(block) {
+Blockly.JavaScript['workshop_setpreviousstatement'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
@@ -125,7 +125,7 @@ Blockly.JavaScript['workspace_setpreviousstatement'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setnextstatement'] = {
+Blockly.Blocks['workshop_setnextstatement'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set next output")
@@ -138,7 +138,7 @@ Blockly.Blocks['workspace_setnextstatement'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setnextstatement'] = function(block) {
+Blockly.JavaScript['workshop_setnextstatement'] = function(block) {
   var checkbox_boolean = block.getFieldValue('boolean') == 'TRUE';
   var text_type = block.getFieldValue('type');
   // RETURN CHANGES BASED ON 
@@ -214,7 +214,7 @@ var code = 'this.setColour('+color+');\n';
 
 
 
-Blockly.Blocks['workspace_setcomment'] = {
+Blockly.Blocks['workshop_setcomment'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set comment")
@@ -226,7 +226,7 @@ Blockly.Blocks['workspace_setcomment'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setcomment'] = function(block) {
+Blockly.JavaScript['workshop_setcomment'] = function(block) {
   var text_comment = block.getFieldValue('comment');
   if (text_comment !== '') {text_comment = '"'+quote(text_comment)+'"'} else {text_comment = 'null';}
   var code = 'this.setCommentText('+text_comment+');\n';
@@ -235,7 +235,7 @@ Blockly.JavaScript['workspace_setcomment'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setconnectionshidden'] = {
+Blockly.Blocks['workshop_setconnectionshidden'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set connections hidden")
@@ -247,7 +247,7 @@ Blockly.Blocks['workspace_setconnectionshidden'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setconnectionshidden'] = function(block) {
+Blockly.JavaScript['workshop_setconnectionshidden'] = function(block) {
   var text_connections = block.getFieldValue('connections') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setConnectionsHidden('+text_connections+');\n';
@@ -256,7 +256,7 @@ Blockly.JavaScript['workspace_setconnectionshidden'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setdeletable'] = {
+Blockly.Blocks['workshop_setdeletable'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set deletable")
@@ -268,7 +268,7 @@ Blockly.Blocks['workspace_setdeletable'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setdeletable'] = function(block) {
+Blockly.JavaScript['workshop_setdeletable'] = function(block) {
   var text_delete = block.getFieldValue('delete') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setDeletable('+text_delete+');\n';
@@ -277,7 +277,7 @@ Blockly.JavaScript['workspace_setdeletable'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setdisabled'] = {
+Blockly.Blocks['workshop_setdisabled'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set disabled")
@@ -289,7 +289,7 @@ Blockly.Blocks['workspace_setdisabled'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setdisabled'] = function(block) {
+Blockly.JavaScript['workshop_setdisabled'] = function(block) {
   var text_disabled = block.getFieldValue('disabled') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setDisabled('+text_disabled+');\n';
@@ -297,7 +297,7 @@ Blockly.JavaScript['workspace_setdisabled'] = function(block) {
 };    
 
 
-Blockly.Blocks['workspace_setinputsinline'] = {
+Blockly.Blocks['workshop_setinputsinline'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set inputs inline")
@@ -309,7 +309,7 @@ Blockly.Blocks['workspace_setinputsinline'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setinputsinline'] = function(block) {
+Blockly.JavaScript['workshop_setinputsinline'] = function(block) {
   var text_inline = block.getFieldValue('inline') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setInputsInline('+text_inline+');\n';
@@ -318,7 +318,7 @@ Blockly.JavaScript['workspace_setinputsinline'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setinsertionmarker'] = {
+Blockly.Blocks['workshop_setinsertionmarker'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set insert marker")
@@ -330,7 +330,7 @@ Blockly.Blocks['workspace_setinsertionmarker'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setinsertionmarker'] = function(block) {
+Blockly.JavaScript['workshop_setinsertionmarker'] = function(block) {
   var text_insert = block.getFieldValue('insert') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setInsertionMarker('+text_insert+');\n';
@@ -339,7 +339,7 @@ Blockly.JavaScript['workspace_setinsertionmarker'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setmoveable'] = {
+Blockly.Blocks['workshop_setmoveable'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set moveable")
@@ -351,7 +351,7 @@ Blockly.Blocks['workspace_setmoveable'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setmoveable'] = function(block) {
+Blockly.JavaScript['workshop_setmoveable'] = function(block) {
   var text_move = block.getFieldValue('move') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setMovable('+text_move+');\n';
@@ -360,7 +360,7 @@ Blockly.JavaScript['workspace_setmoveable'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setshadow'] = {
+Blockly.Blocks['workshop_setshadow'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set shadow")
@@ -372,7 +372,7 @@ Blockly.Blocks['workspace_setshadow'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setshadow'] = function(block) {
+Blockly.JavaScript['workshop_setshadow'] = function(block) {
   var text_shadow = block.getFieldValue('shadow') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setShadow('+text_shadow+');\n';
@@ -381,7 +381,7 @@ Blockly.JavaScript['workspace_setshadow'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setwarningtext'] = {
+Blockly.Blocks['workshop_setwarningtext'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set warning text")
@@ -394,7 +394,7 @@ Blockly.Blocks['workspace_setwarningtext'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setwarningtext'] = function(block) {
+Blockly.JavaScript['workshop_setwarningtext'] = function(block) {
   var text_warning = block.getFieldValue('warning'),
       text_id = block.getFieldValue('id');
   if (text_warning !== '') {text_warning = '"'+quote(text_warning)+'"'} else {text_warning = 'null';}
@@ -406,7 +406,7 @@ Blockly.JavaScript['workspace_setwarningtext'] = function(block) {
 
 
 
-Blockly.Blocks['workspace_setcollapsed'] = {
+Blockly.Blocks['workshop_setcollapsed'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("set collapsed")
@@ -418,9 +418,30 @@ Blockly.Blocks['workspace_setcollapsed'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workspace_setcollapsed'] = function(block) {
+Blockly.JavaScript['workshop_setcollapsed'] = function(block) {
   var text_collapse = block.getFieldValue('collapse') == "TRUE";
   // TODO: Assemble JavaScript into code variable.
   var code = 'this.setCollapsed('+text_collapse+');\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['workshop_dispose'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("dispose")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "heal");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workshop_dispose'] = function(block) {
+  var text_heal = block.getFieldValue('heal') == "TRUE";
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.dispose('+text_heal+');\n';
   return code;
 };
