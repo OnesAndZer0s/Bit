@@ -218,3 +218,66 @@ Blockly.JavaScript['workspace_setcomment'] = function(block) {
   var code = 'this.setCommentText("'+quote(text_comment)+'");\n';
   return code;
 };
+
+
+
+Blockly.Blocks['workspace_setconnectionshidden'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set connections hidden")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "connections");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setconnectionshidden'] = function(block) {
+  var text_connections = block.getFieldValue('connections');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setConnectionsHidden("'+text_connections+'");\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['workspace_setdeletable'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set deletable")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "delete");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setdeletable'] = function(block) {
+  var text_delete = block.getFieldValue('delete');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setDeletable("'+text_delete+'");\n';
+  return code;
+};
+
+
+
+Blockly.Blocks['workspace_setdisabled'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("set disabled")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "disabled");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(210);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workspace_setdisabled'] = function(block) {
+  var text_disabled = block.getFieldValue('disabled');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'this.setDisabled("'+text_disabled+'");\n';
+  return code;
+};
