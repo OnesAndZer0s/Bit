@@ -79,6 +79,35 @@
         <category name="Functions" custom="PROCEDURE"></category>
 </xml>
 <script>
+var pre = initBlockly("blocklyPreview", {
+  collapse : false, 
+	comments : false, 
+	disable : false, 
+	maxBlocks : Infinity, 
+	trashcan : false, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	scrollbars : true, 
+	sounds : true, 
+	oneBasedIndex : false, 
+	grid : {
+		spacing : 25, 
+		length : 1, 
+		colour : '#555', 
+		snap : false
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : true, 
+		startScale : 1, 
+		maxScale : 1.5, 
+		minScale : 0.2, 
+		scaleSpeed : 1.2
+	}
+});
+	
+	
 var define = initBlockly("blocklyDefine", {
   toolbox: document.getElementById('toolbox'),
   collapse : false, 
@@ -117,33 +146,8 @@ var define = initBlockly("blocklyDefine", {
   define.centerOnBlock("desc");
   define.addChangeListener(Blockly.Events.disableOrphans);
 
-var pre = initBlockly("blocklyPreview", {
-  collapse : false, 
-	comments : false, 
-	disable : false, 
-	maxBlocks : Infinity, 
-	trashcan : false, 
-	horizontalLayout : false, 
-	toolboxPosition : 'start', 
-	css : true, 
-	scrollbars : true, 
-	sounds : true, 
-	oneBasedIndex : false, 
-	grid : {
-		spacing : 25, 
-		length : 1, 
-		colour : '#555', 
-		snap : false
-	}, 
-	zoom : {
-		controls : true, 
-		wheel : true, 
-		startScale : 1, 
-		maxScale : 1.5, 
-		minScale : 0.2, 
-		scaleSpeed : 1.2
-	}
-});
+	
+
   pre.addChangeListener(Blockly.Events.disableOrphans);
   var main = pre.newBlock('workshop_demo',"pre");
   eval("Blockly.Blocks['workshop_demo'] = { init: function() {" + generate + "} };")
