@@ -618,6 +618,6 @@ Blockly.JavaScript['workshop_field'] = function(block) {
       text_name = block.getFieldValue('name');
 ;
 
-  var code = '\n.appendField('++', "'+text_name+'")';
+  var code = '\n.appendField('+''+', "'+text_name+'")';
   return code;
 };
