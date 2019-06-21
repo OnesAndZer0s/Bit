@@ -613,11 +613,22 @@ Blockly.Blocks['workshop_field'] = {
  this.setHelpUrl("");
   }
 };
-Blockly.JavaScript['workshop_field'] = function(block) {
-  var text_remove = block.getFieldValue('type'),
+Blockly.JavaScript['workshop_field'] = function(block) { //ADD VALIDATOR FOR ALL EXEPT LABEL   https://developers.google.com/blockly/reference/js/Blockly.Field
+  var type = block.getFieldValue('type'),
       text_name = block.getFieldValue('name');
-;
+  
+if (type=="text") {type = '';} else //textbox
+if (type=="label") {type = '';} else //textbox class
+if (type=="textInput") {type = '';} else //textbox
+if (type=="numberInput") {type = '';} else //number min max presicion
+if (type=="angleInput") {type = '';} else // number
+if (type=="dropdown") {type = '';} else //MUTATIONS CANT WAIT YAY
+if (type=="checkbox") {type = '';} else //checkbox
+if (type=="color") {type = '';} else //color
+if (type=="date") {type = '';} else //date
+if (type=="variable") {type = '';} else //textbox
+if (type=="image") {type = '';} //url width height alt flipRTL
 
-  var code = '\n.appendField('+''+', "'+text_name+'")';
+  var code = '\n.appendField('+type+', "'+text_name+'")';
   return code;
 };
