@@ -580,7 +580,7 @@ Blockly.JavaScript['workshop_fieldremove'] = function(block) {
 };
 
 
-
+       
 Blockly.Blocks['workshop_fielddispose'] = {
   init: function() {
     this.appendDummyInput()
@@ -594,5 +594,30 @@ Blockly.Blocks['workshop_fielddispose'] = {
 };
 Blockly.JavaScript['workshop_fielddispose'] = function(block) {
   var code = '\n.dispose()';
+  return code;
+};
+
+
+
+
+Blockly.Blocks['workshop_field'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("field")
+        .appendField(new Blockly.FieldDropdown([["text","text"], ["label","label"], ["text input","textInput"], ["number input","numberInput"], ["angle input","angleInput"], ["dropdown","dropdown"], ["checkbox","checkbox"], ["color","color"], ["date","date"], ["variable","variable"], ["image","image"]]), "type")
+        .appendField(new Blockly.FieldTextInput("name"), "name");
+    this.setPreviousStatement(true, "field");
+    this.setNextStatement(true, "field");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workshop_field'] = function(block) {
+  var text_remove = block.getFieldValue('type'),
+      text_name = block.getFieldValue('name');
+;
+
+  var code = '\n.appendField('++', "'+text_name+'")';
   return code;
 };
