@@ -628,7 +628,7 @@ if (type=="angleInput") {type = 'new Blockly.FieldAngle()';} else // number
 if (type=="dropdown") {type = 'new Blockly.FieldDropdown()';} else //MUTATIONS CANT WAIT YAY
 if (type=="checkbox") {type = 'new Blockly.FieldCheckbox()';} else //checkbox
 if (type=="color") {type = 'new Blockly.FieldColour()';} else //color
-if (type=="date") {type = 'new Blockly.FieldDate("2015-02-05")';} else //date
+if (type=="date") {type = 'new Blockly.FieldDate()';} else //date make sure to change blockly_compressed.js IT IS SLOW
 if (type=="variable") {type = 'new Blockly.FieldVariable()';} else //textbox
 if (type=="image") {type = 'new Blockly.FieldImage()';} //url width height alt flipRTL
 
