@@ -620,7 +620,7 @@ Blockly.JavaScript['workshop_field'] = function(block) { //ADD VALIDATOR FOR ALL
   var type = block.getFieldValue('type'),
       text_name = block.getFieldValue('name');
   
-if (type=="text") {type = 'new Blockly.Field()';} else //textbox
+if (type=="text") {type = '"'+''+'"';} else //textbox
 if (type=="label") {type = 'new Blockly.FieldLabel()';} else //textbox class
 if (type=="textInput") {type = 'new Blockly.FieldTextInput()';} else //textbox
 if (type=="numberInput") {type = 'new Blockly.FieldNumber()';} else //number min max presicion
