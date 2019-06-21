@@ -193,8 +193,8 @@ line.appendField(new Blockly.FieldNumber(0, 0, 255), "b");
 }   
     if (input == "hsl" && this.getField('h') == null) {
 line.appendField(new Blockly.FieldNumber(0, 0, 360), "h");
-line.appendField(new Blockly.FieldNumber(0, 0, 100), "s");
-line.appendField(new Blockly.FieldNumber(0, 0, 100), "l");
+line.appendField(new Blockly.FieldNumber(50, 0, 100), "s");
+line.appendField(new Blockly.FieldNumber(50, 0, 100), "l");
 }   
 }
 };
