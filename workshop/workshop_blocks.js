@@ -4,7 +4,7 @@ Blockly.Blocks['workshop_block_description'] = {
         .appendField("name")
         .appendField(new Blockly.FieldTextInput("block_name"), "block_name");
     this.appendStatementInput("init")
-        .setCheck(null)
+        .setCheck("input")
         .appendField("init");
     this.setColour(120);
  this.setTooltip("");
@@ -40,8 +40,8 @@ Blockly.Blocks['workshop_settooltip'] = {
     this.appendDummyInput()
         .appendField("set tooltip")
         .appendField(new Blockly.FieldTextInput(""), "tooltip");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -61,8 +61,8 @@ Blockly.Blocks['workshop_sethelpurl'] = {
     this.appendDummyInput()
         .appendField("set help url")
         .appendField(new Blockly.FieldTextInput(""), "helpurl");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -84,8 +84,8 @@ Blockly.Blocks['workshop_setoutput'] = {
         .appendField("set output")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "boolean")
         .appendField(new Blockly.FieldTextInput(""), "type");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);    
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);    
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -107,8 +107,8 @@ Blockly.Blocks['workshop_setpreviousstatement'] = {
         .appendField("set previous output")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "boolean")
         .appendField(new Blockly.FieldTextInput(""), "type");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);    
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);    
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -131,8 +131,8 @@ Blockly.Blocks['workshop_setnextstatement'] = {
         .appendField("set next output")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "boolean")
         .appendField(new Blockly.FieldTextInput(""), "type");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);    
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);    
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -155,8 +155,8 @@ Blockly.Blocks['workshop_setcolor'] = {
         .appendField("set color")
         .appendField(new Blockly.FieldDropdown([["hue","hue"], ["hex","hex"], ["RGB","rgb"], ["HSL","hsl"]]), "type")
         .appendField(new Blockly.FieldNumber(0, 0, 360), "hue");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -219,8 +219,8 @@ Blockly.Blocks['workshop_setcomment'] = {
     this.appendDummyInput()
         .appendField("set comment")
         .appendField(new Blockly.FieldTextInput(""), "comment");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -240,8 +240,8 @@ Blockly.Blocks['workshop_setconnectionshidden'] = {
     this.appendDummyInput()
         .appendField("set connections hidden")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "connections");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -261,8 +261,8 @@ Blockly.Blocks['workshop_setdeletable'] = {
     this.appendDummyInput()
         .appendField("set deletable")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "delete");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -282,8 +282,8 @@ Blockly.Blocks['workshop_setdisabled'] = {
     this.appendDummyInput()
         .appendField("set disabled")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "disabled");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -302,8 +302,8 @@ Blockly.Blocks['workshop_setinputsinline'] = {
     this.appendDummyInput()
         .appendField("set inputs inline")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "inline");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -323,8 +323,8 @@ Blockly.Blocks['workshop_setinsertionmarker'] = {
     this.appendDummyInput()
         .appendField("set insert marker")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "insert");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("once set, it cannot be undone");
  this.setHelpUrl("");
@@ -344,8 +344,8 @@ Blockly.Blocks['workshop_setmoveable'] = {
     this.appendDummyInput()
         .appendField("set moveable")
         .appendField(new Blockly.FieldCheckbox("TRUE"), "move");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -365,8 +365,8 @@ Blockly.Blocks['workshop_setshadow'] = {
     this.appendDummyInput()
         .appendField("set shadow")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "shadow");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -387,8 +387,8 @@ Blockly.Blocks['workshop_setwarningtext'] = {
         .appendField("set warning text")
         .appendField(new Blockly.FieldTextInput(""), "warning")
         .appendField(new Blockly.FieldTextInput("id"), "id");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -411,8 +411,8 @@ Blockly.Blocks['workshop_setcollapsed'] = {
     this.appendDummyInput()
         .appendField("set collapsed")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "collapse");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -432,8 +432,8 @@ Blockly.Blocks['workshop_dispose'] = {
     this.appendDummyInput()
         .appendField("dispose")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "heal");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(210);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -454,8 +454,8 @@ Blockly.Blocks['workshop_appenddummyinput'] = {
         .appendField(new Blockly.FieldTextInput("name"), "name");
     this.appendStatementInput("fields")
         .setCheck("field");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -478,8 +478,8 @@ Blockly.Blocks['workshop_appendstatementinput'] = {
         .appendField(new Blockly.FieldTextInput("name"), "name");
     this.appendStatementInput("fields")
         .setCheck("field");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -502,8 +502,8 @@ Blockly.Blocks['workshop_appendvalueinput'] = {
         .appendField(new Blockly.FieldTextInput("name"), "name");
     this.appendStatementInput("fields")
         .setCheck("field");
-    this.setPreviousStatement(true, null);
-    this.setNextStatement(true, null);
+    this.setPreviousStatement("input", null);
+    this.setNextStatement("input", null);
     this.setColour(180);
  this.setTooltip("");
  this.setHelpUrl("");
@@ -555,5 +555,26 @@ Blockly.JavaScript['workshop_fieldsetalign'] = function(block) {
   var text_align = block.getFieldValue('align');
   // TODO: Assemble JavaScript into code variable.
   var code = '\n.setAlign('+text_align+')';
+  return code;
+};
+
+
+
+Blockly.Blocks['workshop_fieldremove'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("remove field")
+        .appendField(new Blockly.FieldTextInput("name"), "name");
+    this.setPreviousStatement(true, "field");
+    this.setNextStatement(true, "field");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workshop_fieldremove'] = function(block) {
+  var text_remove = block.getFieldValue('name');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '\n.removeField('+text_remove+')';
   return code;
 };
