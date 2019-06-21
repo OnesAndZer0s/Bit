@@ -575,6 +575,24 @@ Blockly.Blocks['workshop_fieldremove'] = {
 Blockly.JavaScript['workshop_fieldremove'] = function(block) {
   var text_remove = block.getFieldValue('name');
   // TODO: Assemble JavaScript into code variable.
-  var code = '\n.removeField('+text_remove+')';
+  var code = '\n.removeField("'+text_remove+'")';
+  return code;
+};
+
+
+
+Blockly.Blocks['workshop_fielddispose'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("dispose")
+    this.setPreviousStatement(true, "field");
+    this.setNextStatement(true, "field");
+    this.setColour(180);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+Blockly.JavaScript['workshop_fielddispose'] = function(block) {
+  var code = '\n.dispose()';
   return code;
 };
