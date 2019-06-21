@@ -1,3 +1,6 @@
+goog.require('Blockly.FieldDate');
+
+
 Blockly.Blocks['workshop_block_description'] = {
   init: function() {
     this.appendDummyInput()
@@ -617,17 +620,17 @@ Blockly.JavaScript['workshop_field'] = function(block) { //ADD VALIDATOR FOR ALL
   var type = block.getFieldValue('type'),
       text_name = block.getFieldValue('name');
   
-if (type=="text") {type = '';} else //textbox
-if (type=="label") {type = '';} else //textbox class
-if (type=="textInput") {type = '';} else //textbox
-if (type=="numberInput") {type = '';} else //number min max presicion
-if (type=="angleInput") {type = '';} else // number
-if (type=="dropdown") {type = '';} else //MUTATIONS CANT WAIT YAY
-if (type=="checkbox") {type = '';} else //checkbox
-if (type=="color") {type = '';} else //color
-if (type=="date") {type = '';} else //date
-if (type=="variable") {type = '';} else //textbox
-if (type=="image") {type = '';} //url width height alt flipRTL
+if (type=="text") {type = 'new Blockly.Field()';} else //textbox
+if (type=="label") {type = 'new Blockly.FieldLabel()';} else //textbox class
+if (type=="textInput") {type = 'new Blockly.FieldTextInput()';} else //textbox
+if (type=="numberInput") {type = 'new Blockly.FieldNumber()';} else //number min max presicion
+if (type=="angleInput") {type = 'new Blockly.FieldAngle()';} else // number
+if (type=="dropdown") {type = 'new Blockly.FieldDropdown()';} else //MUTATIONS CANT WAIT YAY
+if (type=="checkbox") {type = 'new Blockly.FieldCheckbox()';} else //checkbox
+if (type=="color") {type = 'new Blockly.FieldColour()';} else //color
+if (type=="date") {type = 'new Blockly.FieldDate("2015-02-05")';} else //date
+if (type=="variable") {type = 'new Blockly.FieldVariable()';} else //textbox
+if (type=="image") {type = 'new Blockly.FieldImage()';} //url width height alt flipRTL
 
   var code = '\n.appendField('+type+', "'+text_name+'")';
   return code;
