@@ -172,8 +172,9 @@ preBlock.render();
 }
 });
 	
-document.getElementById("blockDef").oninput = function(){
-console.log('AAA');
+document.getElementById("blockDef").oninput = function(input){
+	
+console.log(input,this);
 }
 	
 	
