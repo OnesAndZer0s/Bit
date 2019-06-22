@@ -39,10 +39,10 @@ Blockly.Blocks['workshop_block_description'] = {
  this.setHelpUrl("");
  this.getField('mutator').setValidator(function(bool) {
 console.log("SET MUTATOR TO"+bool);
-  };
+  });
  this.getField('mutatorUI').setValidator(function(bool) {
 console.log("SET MUTATOR UI TO"+bool);
-  };
+  });
 };
 Blockly.JavaScript['workshop_block_description'] = function(block) {
   var text_block_name = block.getFieldValue('block_name');
