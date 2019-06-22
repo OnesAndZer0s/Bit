@@ -157,9 +157,9 @@ if (code !== "") {
 var c = code.split('\u001F'); 
 document.getElementById('blockDef').value = c[1]; 
 document.getElementById('blockCode').value =  c[2]; 
-console.log(c[0]);
-console.log(c[1]);
-console.log(c[2]);
+//console.log(c[0]);
+//console.log(c[1]);
+//console.log(c[2]);
 	
 eval(c[1]);
 eval(c[2]);
@@ -168,10 +168,16 @@ preBlock.dispose();
 preBlock = pre.newBlock(c[0],"pre");
 preBlock.initSvg();
 preBlock.render();
-console.log(code);
+//console.log(code);
 }
 });
 	
+document.getElementById("blockDef).onchange = function(){
+console.log('AAA');
+}
+	
+	
+
   var main = define.newBlock('workshop_block_description',"desc");
   main.initSvg();
   main.render();
