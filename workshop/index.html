@@ -173,8 +173,15 @@ preBlock.render();
 });
 	
 document.getElementById("blockDef").oninput = function(input){
-	
-console.log(input.data);
+
+eval(this.value);
+eval(document.getElementById("blockCode").value);
+
+preBlock.dispose();
+preBlock = pre.newBlock(this.value.split("'")[1],"pre");
+preBlock.initSvg();
+preBlock.render();
+
 console.log(this.value);
 }
 	
