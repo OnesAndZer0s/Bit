@@ -96,10 +96,25 @@ var oldNum = arr.length,
     newNum = Number(this.getFieldValue("functionAmnt"));
 console.log([oldNum, newNum]);  
 
-this.appendDummyInput("name"+i)
-.appendField(new Blockly.FieldTextInput("name"), "name"+i);
-this.appendStatementInput("funcCode"+i)
+if (oldNum < newNum) { //add
+while (oldNum - newNum !== 0) {
+this.appendDummyInput("name"+oldNum+1)
+.appendField(new Blockly.FieldTextInput("name"), "name"+oldNum+1);
+this.appendStatementInput("funcCode"+oldNum+1)
 .setCheck(null);
+oldNum++;
+}
+
+}
+else if (oldNum > newNum){ //remove
+while (newNum - oldNum !== 0) {
+this.removeInput("name"+newNum+1);
+this.removeInput("funcCode"+newNum+1);
+newNum++;}
+
+}
+
+
 }
     
 }
