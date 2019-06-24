@@ -21,14 +21,14 @@ Blockly.Blocks['workshop_block_description'] = {
 this.updateShape([undefined,undefined]);
  this.getField('mutator').setValidator(function(bool) {
 console.log("SET MUTATOR TO "+bool);
-this.updateShape([bool,undefined,undefined]);
+this.sourceBlock_.updateShape([bool,undefined,undefined]);
   });
  this.getField('functionAmnt').setValidator(function(amnt) {
 console.log("SET FUNCTIONS TO "+amnt);
-this.updateShape([undefined,undefined,amnt]);
+this.sourceBlock_.updateShape([undefined,undefined,amnt]);
   });
 },
-  updateShape(inputArr){
+  updateShape: function(inputArr){
 // array goes mut,mUI,funcNum
 if (inputArr[0]) {
     this.appendDummyInput("mtdInput")
@@ -53,7 +53,7 @@ if (inputArr[0]) {
   
  this.getField('mutatorUI').setValidator(function(bool) {
 console.log("SET MUTATOR UI TO "+bool);
-this.updateShape([undefined,bool,undefined]);
+this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 }
 
