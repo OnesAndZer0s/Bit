@@ -44,6 +44,9 @@ console.log("SET MUTATOR TO "+bool);
 console.log("SET MUTATOR UI TO "+bool);
 console.log(this.sourceBlock_.getInput('com'))
 this.sourceBlock_.getInput('com').setVisible(bool);
+this.sourceBlock_.getInput('compose').setVisible(bool);
+this.sourceBlock_.getInput('decom').setVisible(bool);
+this.sourceBlock_.getInput('decompose').setVisible(bool);
   });
  this.getField('functionAmnt').setValidator(function(amnt) {
 console.log("SET FUNCTIONS TO "+amnt);
