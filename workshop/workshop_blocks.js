@@ -56,6 +56,9 @@ console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 }
+else {
+this.getInput("mtdInput").dispose();
+}
 
 }
   
