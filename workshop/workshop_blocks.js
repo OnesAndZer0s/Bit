@@ -43,12 +43,16 @@ console.log("SET MUTATOR TO "+bool);
  this.getField('mutatorUI').setValidator(function(bool) {
 console.log("SET MUTATOR UI TO "+bool);
 console.log(this.sourceBlock_.getInput('com'))
-this.sourceBlock_.getInput('com').setVisible(bool);
-this.sourceBlock_.getInput('com').init();
-this.sourceBlock_.getInput('compose').setVisible(bool);
-this.sourceBlock_.getInput('compose').init();
-this.sourceBlock_.getInput('decom').setVisible(bool);
-this.sourceBlock_.getInput('decompose').setVisible(bool);
+if (bool) {
+  
+}
+else {
+this.sourceBlock_.getInput('com').dispose();
+this.sourceBlock_.getInput('compose').dispose();
+this.sourceBlock_.getInput('decom').dispose();
+this.sourceBlock_.getInput('decompose').dispose();  
+}
+
   });
  this.getField('functionAmnt').setValidator(function(amnt) {
 console.log("SET FUNCTIONS TO "+amnt);
