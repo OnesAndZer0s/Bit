@@ -49,9 +49,11 @@ console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 
-var list = this.inputList.map(function(cur){return cur.name}); //move new inputs to after check, not move func
-this.moveNumberedInputBefore(list.indexOf("func"),list.length);
+// var list = this.inputList.map(function(cur){return cur.name}); //move new inputs to after check, not move func
+// this.moveNumberedInputBefore(list.indexOf("func"),list.length);
 
+var list = ["mtdInput","dtmInput","mUICheck"];
+list.reverse().forEach(function(cur){this.moveInputBefore(cur,'func')});
 }
 else if (inputArr[0] == false) {
 if (this.getInput("mtdInput") !== null) {
