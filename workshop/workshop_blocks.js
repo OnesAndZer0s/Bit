@@ -3,13 +3,13 @@ goog.require('Blockly.FieldDate');
 
 Blockly.Blocks['workshop_block_description'] = {
   init: function() {
-    this.appendDummyInput()
+    this.appendDummyInput("name")
         .appendField("name")
         .appendField(new Blockly.FieldTextInput("block_name"), "block_name");
     this.appendStatementInput("init")
         .setCheck("input")
         .appendField("init");
-    this.appendDummyInput()
+    this.appendDummyInput("mutCheck")
         .appendField("mutator")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutator");
     this.appendDummyInput("func")
@@ -40,7 +40,7 @@ if (inputArr[0]) {
         .appendField("domToMutation");
     this.appendStatementInput("dtm")
         .setCheck(null);
-    this.appendDummyInput("mUI")
+    this.appendDummyInput("mUICheck")
         .appendField("mutator UI")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
   
@@ -49,6 +49,9 @@ console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 
+var list = this.inputList.map(function(cur){return cur.name}); //move new inputs to after check, not move func
+this.moveNumberedInputBefore(list.indexOf("func"),list.length);
+
 }
 else if (inputArr[0] == false) {
 if (this.getInput("mtdInput") !== null) {
@@ -56,7 +59,7 @@ if (this.getInput("mtdInput") !== null) {
   this.removeInput("mtd");
   this.removeInput("dtmInput");
   this.removeInput("dtm");
-  this.removeInput("mUI");
+  this.removeInput("mUICheck");
 if (this.getInput("com") !== null) {
   this.removeInput("com");
   this.removeInput("compose");
