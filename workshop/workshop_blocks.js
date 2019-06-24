@@ -30,7 +30,7 @@ this.sourceBlock_.updateShape([undefined,undefined,amnt]);
 },
   updateShape: function(inputArr){
 // array goes mut,mUI,funcNum
-if (inputArr[0]) {
+if (inputArr[0] == true) {
     this.appendDummyInput("mtdInput")
         .appendField("mutationToDom");
     this.appendStatementInput("mtd")
@@ -56,7 +56,7 @@ console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 }
-else {
+else if (inputArr[0] == false) {
 this.getInput("mtdInput").dispose();
 }
 
