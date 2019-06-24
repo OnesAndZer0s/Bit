@@ -12,6 +12,29 @@ Blockly.Blocks['workshop_block_description'] = {
     this.appendDummyInput()
         .appendField("mutator")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutator");
+    this.appendDummyInput()
+        .appendField("functions")
+        .appendField(new Blockly.FieldNumber(0, 0, 10), "functionAmnt");
+    this.setColour(120);
+ this.setTooltip("");
+ this.setHelpUrl("");
+this.updateShape([undefined,undefined]);
+ this.getField('mutator').setValidator(function(bool) {
+console.log("SET MUTATOR TO "+bool);
+this.updateShape([bool,undefined,undefined]);
+  });
+ this.getField('mutatorUI').setValidator(function(bool) {
+console.log("SET MUTATOR UI TO "+bool);
+this.updateShape([undefined,bool,undefined]);
+  });
+ this.getField('functionAmnt').setValidator(function(amnt) {
+console.log("SET FUNCTIONS TO "+amnt);
+this.updateShape([undefined,undefined,amnt]);
+  });
+},
+  updateShape: function(inputArr){
+// array goes mut,mUI,funcNum
+if (inputArr[0]) {
     this.appendDummyInput("mtdInput")
         .appendField("mutationToDom");
     this.appendStatementInput("mtd")
@@ -30,36 +53,13 @@ Blockly.Blocks['workshop_block_description'] = {
     this.appendDummyInput("decom")
         .appendField("decompose");
     this.appendStatementInput("decompose")
-        .setCheck(null);
-    this.appendDummyInput()
-        .appendField("functions")
-        .appendField(new Blockly.FieldNumber(0, 0, 10), "functionAmnt");
-    this.setColour(120);
- this.setTooltip("");
- this.setHelpUrl("");
- this.getField('mutator').setValidator(function(bool) {
-console.log("SET MUTATOR TO "+bool);
-  });
- this.getField('mutatorUI').setValidator(function(bool) {
-console.log("SET MUTATOR UI TO "+bool);
-console.log(this.sourceBlock_.getInput('com'))
-if (bool) {
-  
-}
-else {
-this.sourceBlock_.getInput('com').dispose();
-this.sourceBlock_.getInput('compose').dispose();
-this.sourceBlock_.getInput('decom').dispose();
-this.sourceBlock_.getInput('decompose').dispose(); 
-  
-this.sourceBlock_.initModel();
+        .setCheck(null);    
 }
 
-  });
- this.getField('functionAmnt').setValidator(function(amnt) {
-console.log("SET FUNCTIONS TO "+amnt);
-  });
-}};
+}
+  
+
+};
 Blockly.JavaScript['workshop_block_description'] = function(block) {
   var text_block_name = block.getFieldValue('block_name');
   var statements_init = Blockly.JavaScript.statementToCode(block, 'init');
