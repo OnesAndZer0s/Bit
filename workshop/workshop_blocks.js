@@ -20,12 +20,10 @@ Blockly.Blocks['workshop_block_description'] = {
  this.setHelpUrl("");
 this.updateShape([undefined,undefined]);
  this.getField('mutator').setValidator(function(bool) {
-console.log("SET MUTATOR TO "+bool);
 this.sourceBlock_.updateShape([bool,undefined,undefined]);
   });
 },
 updateShape: function(inputArr){
-console.log(this.inputList);
 // array goes mut,mUI,funcNum
 if (inputArr[0]) {
     this.appendDummyInput("mtdInput")
@@ -41,12 +39,10 @@ if (inputArr[0]) {
         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
   
  this.getField('mutatorUI').setValidator(function(bool) {
-console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
   
  this.getField('functionAmnt').setValidator(function(amnt) {
-console.log("SET FUNCTIONS TO "+amnt);
 this.sourceBlock_.updateShape([undefined,undefined,amnt]);
   });
 
@@ -260,7 +256,6 @@ this.sourceBlock_.updateShape_(option);
   },
       mutationToDom: function() {
 var container = document.createElement('mutation');
-console.log(this.getField('hex') !== null);
 container.setAttribute('input', this.getFieldValue('type'));
     return container;
   },
