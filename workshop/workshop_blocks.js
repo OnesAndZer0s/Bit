@@ -28,7 +28,27 @@ console.log("SET FUNCTIONS TO "+amnt);
 this.sourceBlock_.updateShape([undefined,undefined,amnt]);
   });
 },
-  updateShape: function(inputArr){
+  mutationToDom: function () {
+        var container = document.createElement('mutation');
+        // Do not use camelCase values for attribute names.
+        container.setAttribute('mut', this.getFieldValue('mutator') == "TRUE");
+        container.setAttribute('mUI', this.getFieldValue('mutatorUI') == "TRUE");
+        container.setAttribute('funcNum', this.getFieldValue('functionAmnt'));
+        // ALWAYS return container; this will be the input for domToMutation.
+        return container;
+    },
+    /**
+     * This function runs when loading your block from XML, after running init.
+     * It's very important for updating your block in response to values selected in a field.
+     */
+    domToMutation: function (xmlElement) {
+        var mut = xmlElement.getAttribute('mut');
+        var mUI = xmlElement.getAttribute('mUI');
+        var funcNum = xmlElement.getAttribute('funcNum');
+        this.updateShape([mut,mUI,funcNum]);
+    },
+updateShape: function(inputArr){
+console.log(inputArr);
 // array goes mut,mUI,funcNum
 if (inputArr[0] == true) {
     this.appendDummyInput("mtdInput")
