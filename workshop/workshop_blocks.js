@@ -12,7 +12,7 @@ Blockly.Blocks['workshop_block_description'] = {
     this.appendDummyInput()
         .appendField("mutator")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutator");
-    this.appendDummyInput()
+    this.appendDummyInput("func")
         .appendField("functions")
         .appendField(new Blockly.FieldNumber(0, 0, 10), "functionAmnt");
     this.setColour(120);
@@ -56,9 +56,10 @@ if (inputArr[0]) {
 console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
-this.moveNumberedInputBefore(3,this.inputList.length);
+var list = this.inputList.map(function(cur){return cur.name});
+this.moveNumberedInputBefore(list.indexOf("func"),list.length);
 }
-else {
+else if (inputArr[0] == false) {
 if (this.getInput("mtdInput") !== null) {
   this.removeInput("mtdInput");
   this.removeInput("mtd");
