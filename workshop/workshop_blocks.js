@@ -68,7 +68,7 @@ if (this.getInput("com") !== null) {
 }
   }
 }
-  
+
 if (inputArr[1]) {
   this.appendDummyInput("com")
         .appendField("compose");
@@ -78,7 +78,7 @@ if (inputArr[1]) {
         .appendField("decompose");
     this.appendStatementInput("decompose")
         .setCheck(null); 
-  
+
 var list = ["com","compose","decom","decompose"];
 list.forEach(function(cur){this.moveInputBefore(cur,'func')},this);
 
@@ -99,8 +99,17 @@ else if (inputArr[1] == false) {
 Blockly.JavaScript['workshop_block_description'] = function(block) {
   var text_block_name = block.getFieldValue('block_name');
   var statements_init = Blockly.JavaScript.statementToCode(block, 'init');
+  var extra_func = "";
   
-  var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "  }\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) { return ''; };";
+  if (block.getFieldValue('mutator') == "TRUE") {
+  console.log("MUTATOR GENERATE TRUE");
+  }
+  
+  if (block.getFieldValue('mutatorUI') == "TRUE") {
+  console.log("MUTATOR UI GENERATE TRUE");
+  }
+  
+  var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "  }" + extra_func + "\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) { return ''; };";
   return code;
 };
 
