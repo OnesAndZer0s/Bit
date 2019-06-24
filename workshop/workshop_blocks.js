@@ -43,14 +43,6 @@ if (inputArr[0]) {
     this.appendDummyInput("mUI")
         .appendField("mutator UI")
         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
-    this.appendDummyInput("com")
-        .appendField("compose");
-    this.appendStatementInput("compose")
-        .setCheck(null);
-    this.appendDummyInput("decom")
-        .appendField("decompose");
-    this.appendStatementInput("decompose")
-        .setCheck(null); 
   
  this.getField('mutatorUI').setValidator(function(bool) {
 console.log("SET MUTATOR UI TO "+bool);
@@ -66,11 +58,32 @@ if (this.getInput("mtdInput") !== null) {
   this.removeInput("dtmInput");
   this.removeInput("dtm");
   this.removeInput("mUI");
+if (this.getInput("com") !== null) {
   this.removeInput("com");
   this.removeInput("compose");
   this.removeInput("decom");
   this.removeInput("decompose");
+}
   }
+}
+  
+if (inputArr[1]) {
+  this.appendDummyInput("com")
+        .appendField("compose");
+    this.appendStatementInput("compose")
+        .setCheck(null);
+    this.appendDummyInput("decom")
+        .appendField("decompose");
+    this.appendStatementInput("decompose")
+        .setCheck(null); 
+}
+else if (inputArr[1] == false) {
+  if (this.getInput("com") !== null) {
+  this.removeInput("com");
+  this.removeInput("compose");
+  this.removeInput("decom");
+  this.removeInput("decompose");
+}
 }
 
 }
