@@ -66,7 +66,7 @@ this.getInput("dtm").dispose();
 this.getInput("dtmInput").dispose();
 this.getInput("mtd").dispose();
 this.getInput("mtdInput").dispose();
-//this.initSvg();
+this.initSvg();
 this.render();
 }
 
