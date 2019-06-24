@@ -94,10 +94,8 @@ while (this.getInput("name"+i) !== null) {arr.push('name'+i); i++;}
 if (arr.length !== Number(this.getFieldValue("functionAmnt"))) {
 var oldNum = arr.length,
     newNum = Number(this.getFieldValue("functionAmnt"));
-console.log([oldNum, newNum]);  
 
 if (oldNum < newNum) { //add
-console.log('ADD');
 while (oldNum - newNum !== 0) {
 this.appendDummyInput("name"+(oldNum+1))
 .appendField(new Blockly.FieldTextInput("name"), "name"+(oldNum+1));
@@ -109,7 +107,6 @@ oldNum++;
 }
 else if (oldNum > newNum){ //remove
 while (newNum - oldNum !== 0) {
-console.log('REMOVE');
 this.removeInput("name"+(newNum+1));
 this.removeInput("funcCode"+(newNum+1));
 newNum++;}
