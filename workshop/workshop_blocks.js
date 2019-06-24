@@ -99,9 +99,9 @@ console.log([oldNum, newNum]);
 if (oldNum < newNum) { //add
 console.log('ADD');
 while (oldNum - newNum !== 0) {
-this.appendDummyInput("name"+oldNum+1)
-.appendField(new Blockly.FieldTextInput("name"), "name"+oldNum+1);
-this.appendStatementInput("funcCode"+oldNum+1)
+this.appendDummyInput("name"+(oldNum+1))
+.appendField(new Blockly.FieldTextInput("name"), "name"+(oldNum+1));
+this.appendStatementInput("funcCode"+(oldNum+1))
 .setCheck(null);
 oldNum++;
 }
