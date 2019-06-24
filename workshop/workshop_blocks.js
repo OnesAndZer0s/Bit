@@ -56,7 +56,7 @@ if (inputArr[0]) {
 console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
-this.moveNumberedInputBefore(3,this.inputList.length-1);
+this.moveNumberedInputBefore(3,this.inputList.length);
 }
 else {
 if (this.getInput("mtdInput") !== null) {
