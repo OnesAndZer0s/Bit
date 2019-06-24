@@ -29,7 +29,7 @@ this.sourceBlock_.updateShape([bool,undefined,undefined]);
 //   });
 },
 updateShape: function(inputArr){
-console.log(this.getInput("AA"));
+console.log(this.inputList);
 // array goes mut,mUI,funcNum
 if (inputArr[0]) {
     this.appendDummyInput("mtdInput")
