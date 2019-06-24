@@ -48,7 +48,9 @@ if (bool) {
 }
 else {
 this.sourceBlock_.getInput('com').dispose();
+this.sourceBlock_.getInput('com').init();
 this.sourceBlock_.getInput('compose').dispose();
+this.sourceBlock_.getInput('compose').init();
 this.sourceBlock_.getInput('decom').dispose();
 this.sourceBlock_.getInput('decompose').dispose();  
 }
