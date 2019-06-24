@@ -23,10 +23,6 @@ this.updateShape([undefined,undefined]);
 console.log("SET MUTATOR TO "+bool);
 this.updateShape([bool,undefined,undefined]);
   });
- this.getField('mutatorUI').setValidator(function(bool) {
-console.log("SET MUTATOR UI TO "+bool);
-this.updateShape([undefined,bool,undefined]);
-  });
  this.getField('functionAmnt').setValidator(function(amnt) {
 console.log("SET FUNCTIONS TO "+amnt);
 this.updateShape([undefined,undefined,amnt]);
@@ -53,7 +49,12 @@ if (inputArr[0]) {
     this.appendDummyInput("decom")
         .appendField("decompose");
     this.appendStatementInput("decompose")
-        .setCheck(null);    
+        .setCheck(null); 
+  
+ this.getField('mutatorUI').setValidator(function(bool) {
+console.log("SET MUTATOR UI TO "+bool);
+this.updateShape([undefined,bool,undefined]);
+  });
 }
 
 }
