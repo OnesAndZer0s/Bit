@@ -48,8 +48,7 @@ this.sourceBlock_.updateShape([bool,undefined,undefined]);
         this.updateShape([mut,mUI,funcNum]);
     },
 updateShape: function(inputArr){
-console.log(inputArr);
-console.log(this.getInput("AA"))
+console.log(this.getInput("AA"));
 // array goes mut,mUI,funcNum
 if (inputArr[0]) {
 this.appendDummyInput("AA");
