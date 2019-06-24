@@ -88,7 +88,7 @@ else if (inputArr[1] == false) {
   this.removeInput("decompose");
 }
 }
-var i = 0, arr = [];
+var i = 1, arr = [];
 while (this.getInput("name"+i)) {arr.push('name'+i); i++;}
       
 if (arr.length !== Number(this.getFieldValue("functionAmnt"))) {
