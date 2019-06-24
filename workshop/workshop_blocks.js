@@ -110,8 +110,8 @@ oldNum++;
 else if (oldNum > newNum){ //remove
 while (newNum - oldNum !== 0) {
 console.log('REMOVE');
-this.removeInput("name"+newNum+1);
-this.removeInput("funcCode"+newNum+1);
+this.removeInput("name"+(newNum+1));
+this.removeInput("funcCode"+(newNum+1));
 newNum++;}
 
 }
