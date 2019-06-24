@@ -49,9 +49,6 @@ console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 
-// var list = this.inputList.map(function(cur){return cur.name}); //move new inputs to after check, not move func
-// this.moveNumberedInputBefore(list.indexOf("func"),list.length);
-
 var list = ["mtdInput","mtd","dtmInput","dtm","mUICheck"];
 list.forEach(function(cur){this.moveInputBefore(cur,'func')},this);
 }
@@ -81,8 +78,9 @@ if (inputArr[1]) {
     this.appendStatementInput("decompose")
         .setCheck(null); 
   
-var list = this.inputList.map(function(cur){return cur.name});
-this.moveNumberedInputBefore(list.indexOf("func"),list.length);
+var list = ["com","compose","decom","decompose"];
+list.forEach(function(cur){this.moveInputBefore(cur,'func')},this);
+
 }
 else if (inputArr[1] == false) {
   if (this.getInput("com") !== null) {
