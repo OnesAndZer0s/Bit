@@ -89,7 +89,7 @@ else if (inputArr[1] == false) {
 }
 }
 var i = 1, arr = [];
-while (this.getInput("name"+i)) {arr.push('name'+i); i++;}
+while (this.getInput("name"+i) !== null) {arr.push('name'+i); i++;}
       
 if (arr.length !== Number(this.getFieldValue("functionAmnt"))) {
 var oldNum = arr.length,
