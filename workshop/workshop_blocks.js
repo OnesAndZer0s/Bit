@@ -48,8 +48,7 @@ if (inputArr[0]) {
 console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
-var list = this.inputList.map(function(cur){return cur.name});
-this.moveNumberedInputBefore(list.indexOf("func"),list.length);
+
 }
 else if (inputArr[0] == false) {
 if (this.getInput("mtdInput") !== null) {
@@ -76,6 +75,9 @@ if (inputArr[1]) {
         .appendField("decompose");
     this.appendStatementInput("decompose")
         .setCheck(null); 
+  
+var list = this.inputList.map(function(cur){return cur.name});
+this.moveNumberedInputBefore(list.indexOf("func"),list.length);
 }
 else if (inputArr[1] == false) {
   if (this.getInput("com") !== null) {
