@@ -53,7 +53,7 @@ this.sourceBlock_.updateShape([undefined,bool,undefined]);
 // this.moveNumberedInputBefore(list.indexOf("func"),list.length);
 
 var list = ["mtdInput","dtmInput","mUICheck"];
-list.reverse().forEach(function(cur){this.moveInputBefore(cur,'func')});
+list.reverse().forEach(function(cur){this.moveInputBefore(cur,'func')},this);
 }
 else if (inputArr[0] == false) {
 if (this.getInput("mtdInput") !== null) {
