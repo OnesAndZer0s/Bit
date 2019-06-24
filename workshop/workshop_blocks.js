@@ -104,6 +104,7 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   
   if (block.getFieldValue('mutatorUI') == "TRUE") {
   console.log("MUTATOR UI GENERATE TRUE");
+  extra_func = extra_func + ",\ncompose: function(){\n  },\ndecompose: function(){\n  }"
   }
   
   var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "  }" + extra_func + "\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) { return ''; };";
