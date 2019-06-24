@@ -19,8 +19,13 @@ Blockly.Blocks['workshop_block_description'] = {
  this.setTooltip("");
  this.setHelpUrl("");
 this.updateShape([undefined,undefined]);
- this.getField('mutator').setValidator(function(bool) {
+ 
+this.getField('mutator').setValidator(function(bool) {
 this.sourceBlock_.updateShape([bool,undefined,undefined]);
+  });
+    
+this.getField('functionAmnt').setValidator(function(amnt) {
+this.sourceBlock_.updateShape([undefined,undefined,amnt]);
   });
 },
 updateShape: function(inputArr){
@@ -40,10 +45,6 @@ if (inputArr[0]) {
   
  this.getField('mutatorUI').setValidator(function(bool) {
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
-  });
-  
- this.getField('functionAmnt').setValidator(function(amnt) {
-this.sourceBlock_.updateShape([undefined,undefined,amnt]);
   });
 
 var list = ["mtdInput","mtd","dtmInput","dtm","mUICheck"];
@@ -92,7 +93,8 @@ while (this.getInput("name"+i)) {arr.push('name'+i); i++;}
       
 console.log(arr.length);
 console.log( this.getFieldValue("functionAmnt"));
-if (arr.length !== this.getFieldValue("functionAmnt")) {
+
+if (arr.length !== Number(this.getFieldValue("functionAmnt"))) {
 this.appendDummyInput("name"+i)
 .appendField(new Blockly.FieldTextInput("name"), "name"+i);
 this.appendStatementInput("funcCode"+i)
