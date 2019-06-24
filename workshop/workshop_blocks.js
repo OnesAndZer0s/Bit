@@ -57,7 +57,16 @@ this.sourceBlock_.updateShape([undefined,bool,undefined]);
   });
 }
 else if (inputArr[0] == false) {
+this.getInput("decompose").dispose();
+this.getInput("decom").dispose();
+this.getInput("compose").dispose();
+this.getInput("com").dispose();
+this.getInput("mUI").dispose();
+this.getInput("dtm").dispose();
+this.getInput("dtmInput").dispose();
+this.getInput("mtd").dispose();
 this.getInput("mtdInput").dispose();
+
 }
 
 }
