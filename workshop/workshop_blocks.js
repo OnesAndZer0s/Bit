@@ -19,14 +19,14 @@ Blockly.Blocks['workshop_block_description'] = {
  this.setTooltip("");
  this.setHelpUrl("");
 this.updateShape([undefined,undefined]);
- this.getField('mutator').setValidator(function(bool) {
-console.log("SET MUTATOR TO "+bool);
-this.sourceBlock_.updateShape([bool,undefined,undefined]);
-  });
- this.getField('functionAmnt').setValidator(function(amnt) {
-console.log("SET FUNCTIONS TO "+amnt);
-this.sourceBlock_.updateShape([undefined,undefined,amnt]);
-  });
+//  this.getField('mutator').setValidator(function(bool) {
+// console.log("SET MUTATOR TO "+bool);
+// this.sourceBlock_.updateShape([bool,undefined,undefined]);
+//   });
+//  this.getField('functionAmnt').setValidator(function(amnt) {
+// console.log("SET FUNCTIONS TO "+amnt);
+// this.sourceBlock_.updateShape([undefined,undefined,amnt]);
+//   });
 },
   mutationToDom: function () {
         var container = document.createElement('mutation');
@@ -50,45 +50,33 @@ this.sourceBlock_.updateShape([undefined,undefined,amnt]);
 updateShape: function(inputArr){
 console.log(inputArr);
 // array goes mut,mUI,funcNum
-if (inputArr[0] == true) {
-    this.appendDummyInput("mtdInput")
-        .appendField("mutationToDom");
-    this.appendStatementInput("mtd")
-        .setCheck(null);
-    this.appendDummyInput("dtmInput")
-        .appendField("domToMutation");
-    this.appendStatementInput("dtm")
-        .setCheck(null);
-    this.appendDummyInput("mUI")
-        .appendField("mutator UI")
-        .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
-    this.appendDummyInput("com")
-        .appendField("compose");
-    this.appendStatementInput("compose")
-        .setCheck(null);
-    this.appendDummyInput("decom")
-        .appendField("decompose");
-    this.appendStatementInput("decompose")
-        .setCheck(null); 
-  
- this.getField('mutatorUI').setValidator(function(bool) {
-console.log("SET MUTATOR UI TO "+bool);
-this.sourceBlock_.updateShape([undefined,bool,undefined]);
-  });
-}
-else if (inputArr[0] == false) {
-this.getInput("decompose").dispose();
-this.getInput("decom").dispose();
-this.getInput("compose").dispose();
-this.getInput("com").dispose();
-this.getInput("mUI").dispose();
-this.getInput("dtm").dispose();
-this.getInput("dtmInput").dispose();
-this.getInput("mtd").dispose();
-this.getInput("mtdInput").dispose();
 
-  this.render();
-}
+  
+  
+//     this.appendDummyInput("mtdInput")
+//         .appendField("mutationToDom");
+//     this.appendStatementInput("mtd")
+//         .setCheck(null);
+//     this.appendDummyInput("dtmInput")
+//         .appendField("domToMutation");
+//     this.appendStatementInput("dtm")
+//         .setCheck(null);
+//     this.appendDummyInput("mUI")
+//         .appendField("mutator UI")
+//         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
+//     this.appendDummyInput("com")
+//         .appendField("compose");
+//     this.appendStatementInput("compose")
+//         .setCheck(null);
+//     this.appendDummyInput("decom")
+//         .appendField("decompose");
+//     this.appendStatementInput("decompose")
+//         .setCheck(null); 
+  
+//  this.getField('mutatorUI').setValidator(function(bool) {
+// console.log("SET MUTATOR UI TO "+bool);
+// this.sourceBlock_.updateShape([undefined,bool,undefined]);
+//   });
 
 }
   
