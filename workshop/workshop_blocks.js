@@ -90,7 +90,8 @@ else if (inputArr[1] == false) {
 var i = 0, arr = [];
 while (this.getInput("name"+i)) {arr.push('name'+i); i++;}
       
-
+console.log(arr.length);
+console.log( this.getFieldValue("functionAmnt"));
 if (arr.length !== this.getFieldValue("functionAmnt")) {
 this.appendDummyInput("name"+i)
 .appendField(new Blockly.FieldTextInput("name"), "name"+i);
