@@ -23,10 +23,6 @@ this.updateShape([undefined,undefined]);
 console.log("SET MUTATOR TO "+bool);
 this.sourceBlock_.updateShape([bool,undefined,undefined]);
   });
-//  this.getField('functionAmnt').setValidator(function(amnt) {
-// console.log("SET FUNCTIONS TO "+amnt);
-// this.sourceBlock_.updateShape([undefined,undefined,amnt]);
-//   });
 },
 updateShape: function(inputArr){
 console.log(this.inputList);
@@ -47,6 +43,11 @@ if (inputArr[0]) {
  this.getField('mutatorUI').setValidator(function(bool) {
 console.log("SET MUTATOR UI TO "+bool);
 this.sourceBlock_.updateShape([undefined,bool,undefined]);
+  });
+  
+ this.getField('functionAmnt').setValidator(function(amnt) {
+console.log("SET FUNCTIONS TO "+amnt);
+this.sourceBlock_.updateShape([undefined,undefined,amnt]);
   });
 
 var list = ["mtdInput","mtd","dtmInput","dtm","mUICheck"];
