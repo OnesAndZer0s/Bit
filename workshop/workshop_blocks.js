@@ -99,7 +99,7 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   
   if (block.getFieldValue('mutator') == "TRUE") {
   console.log("MUTATOR GENERATE TRUE");
-  extra_func = ",\n  mutationToDom: function(){\n },\n  domToMutation: function(){\n }"
+  extra_func = ",\nmutationToDom: function(){\n  },\ndomToMutation: function(){\n  }"
   }
   
   if (block.getFieldValue('mutatorUI') == "TRUE") {
