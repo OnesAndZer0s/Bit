@@ -32,39 +32,43 @@ updateShape: function(inputArr){
 console.log(this.getInput("AA"));
 // array goes mut,mUI,funcNum
 if (inputArr[0]) {
-this.appendDummyInput("AA");
-}
+    this.appendDummyInput("mtdInput")
+        .appendField("mutationToDom");
+    this.appendStatementInput("mtd")
+        .setCheck(null);
+    this.appendDummyInput("dtmInput")
+        .appendField("domToMutation");
+    this.appendStatementInput("dtm")
+        .setCheck(null);
+    this.appendDummyInput("mUI")
+        .appendField("mutator UI")
+        .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
+    this.appendDummyInput("com")
+        .appendField("compose");
+    this.appendStatementInput("compose")
+        .setCheck(null);
+    this.appendDummyInput("decom")
+        .appendField("decompose");
+    this.appendStatementInput("decompose")
+        .setCheck(null); 
+  
+ this.getField('mutatorUI').setValidator(function(bool) {
+console.log("SET MUTATOR UI TO "+bool);
+this.sourceBlock_.updateShape([undefined,bool,undefined]);
+  });}
 else {
-if (this.getInput("AA") !== null) {
-  this.removeInput("AA");
+if (this.getInput("mtdInput") !== null) {
+  this.removeInput("mtdInput");
+  this.removeInput("mtd");
+  this.removeInput("dtmInput");
+  this.removeInput("dtm");
+  this.removeInput("mUI");
+  this.removeInput("com");
+  this.removeInput("compose");
+  this.removeInput("decom");
+  this.removeInput("decompose");
   }
 }
-  
-  
-//     this.appendDummyInput("mtdInput")
-//         .appendField("mutationToDom");
-//     this.appendStatementInput("mtd")
-//         .setCheck(null);
-//     this.appendDummyInput("dtmInput")
-//         .appendField("domToMutation");
-//     this.appendStatementInput("dtm")
-//         .setCheck(null);
-//     this.appendDummyInput("mUI")
-//         .appendField("mutator UI")
-//         .appendField(new Blockly.FieldCheckbox("FALSE"), "mutatorUI");
-//     this.appendDummyInput("com")
-//         .appendField("compose");
-//     this.appendStatementInput("compose")
-//         .setCheck(null);
-//     this.appendDummyInput("decom")
-//         .appendField("decompose");
-//     this.appendStatementInput("decompose")
-//         .setCheck(null); 
-  
-//  this.getField('mutatorUI').setValidator(function(bool) {
-// console.log("SET MUTATOR UI TO "+bool);
-// this.sourceBlock_.updateShape([undefined,bool,undefined]);
-//   });
 
 }
   
