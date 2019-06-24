@@ -28,7 +28,7 @@ console.log("SET FUNCTIONS TO "+amnt);
 this.updateShape([undefined,undefined,amnt]);
   });
 },
-  updateShape: function(inputArr){
+  updateShape(inputArr){
 // array goes mut,mUI,funcNum
 if (inputArr[0]) {
     this.appendDummyInput("mtdInput")
