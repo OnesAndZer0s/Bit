@@ -50,7 +50,12 @@ this.sourceBlock_.updateShape([bool,undefined,undefined]);
 updateShape: function(inputArr){
 console.log(inputArr);
 // array goes mut,mUI,funcNum
-this.appendDummyInput()
+if (inputArr[0]) {
+this.appendDummyInput("AA");
+}
+else {
+this.removeInput("AA");
+}
   
   
 //     this.appendDummyInput("mtdInput")
