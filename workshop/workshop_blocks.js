@@ -87,7 +87,17 @@ else if (inputArr[1] == false) {
   this.removeInput("decompose");
 }
 }
+var i = 0, arr = [];
+while (this.getInput("name"+i)) {arr.push('name'+i); i++;}
+      
 
+if (arr.length !== this.getFieldValue("functionAmnt")) {
+this.appendDummyInput("name"+i)
+.appendField(new Blockly.FieldTextInput("name"), "name"+i);
+this.appendStatementInput("funcCode"+i)
+.setCheck(null);
+}
+    
 }
   
 
