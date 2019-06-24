@@ -54,7 +54,9 @@ if (inputArr[0]) {
 this.appendDummyInput("AA");
 }
 else {
-this.removeInput("AA");
+if (this.getInput("AA") !== undefined) {
+  this.removeInput("AA");
+  }
 }
   
   
