@@ -19,10 +19,10 @@ Blockly.Blocks['workshop_block_description'] = {
  this.setTooltip("");
  this.setHelpUrl("");
 this.updateShape([undefined,undefined]);
-//  this.getField('mutator').setValidator(function(bool) {
-// console.log("SET MUTATOR TO "+bool);
-// this.sourceBlock_.updateShape([bool,undefined,undefined]);
-//   });
+ this.getField('mutator').setValidator(function(bool) {
+console.log("SET MUTATOR TO "+bool);
+this.sourceBlock_.updateShape([bool,undefined,undefined]);
+  });
 //  this.getField('functionAmnt').setValidator(function(amnt) {
 // console.log("SET FUNCTIONS TO "+amnt);
 // this.sourceBlock_.updateShape([undefined,undefined,amnt]);
