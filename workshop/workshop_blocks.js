@@ -136,9 +136,9 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   if (block.getFieldValue('funcNum') !== '0') {
   var arr = [];
   for (var i = 0; i < Number(block.getFieldValue('functionAmnt')); i++) {
-  arr.push(",\n"+"FUNCNAME"+": function("+"VARNAMES"+") {\n\n}")
+  arr.push("\n"+"FUNCNAME"+": function("+"VARNAMES"+") {\n\n}")
   }
-  extra_func = extra_func + arr.join(',');
+  extra_func = extra_func + "," + arr.join(',');
   }
   
   var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "  }" + extra_func + "\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) { return ''; };";
