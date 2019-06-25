@@ -133,7 +133,7 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   extra_func = extra_func + ",\ncompose: function(){\n" + Blockly.JavaScript.statementToCode(block, 'compose') + "  },\ndecompose: function(){\n" + Blockly.JavaScript.statementToCode(block, 'decompose') + "  }"
   }
   
-  if (block.getFieldValue('funcNum') !== '0') {
+  if (block.getFieldValue('functionAmnt') !== '0') {
   var arr = [];
   for (var i = 0; i < Number(block.getFieldValue('functionAmnt')); i++) {
   arr.push("\n"+"FUNCNAME"+": function("+"VARNAMES"+") {\n\n}")
