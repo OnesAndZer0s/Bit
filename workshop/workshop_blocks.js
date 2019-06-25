@@ -126,22 +126,22 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   var extra_func = "";
   
   if (block.getFieldValue('mutator') == "TRUE") {
-  extra_func = ",\nmutationToDom: function(){\n" + Blockly.JavaScript.statementToCode(block, 'mtd') + "  },\ndomToMutation: function(){\n" + Blockly.JavaScript.statementToCode(block, 'dtm') + "  }"
+  extra_func = ",\n  mutationToDom: function(){\n" + Blockly.JavaScript.statementToCode(block, 'mtd') + "  },\n  domToMutation: function(){\n" + Blockly.JavaScript.statementToCode(block, 'dtm') + "  }"
   }
   
   if (block.getFieldValue('mutatorUI') == "TRUE") {
-  extra_func = extra_func + ",\ncompose: function(){\n" + Blockly.JavaScript.statementToCode(block, 'compose') + "  },\ndecompose: function(){\n" + Blockly.JavaScript.statementToCode(block, 'decompose') + "  }"
+  extra_func = extra_func + ",\n  compose: function(){\n" + Blockly.JavaScript.statementToCode(block, 'compose') + "  },\n  decompose: function(){\n" + Blockly.JavaScript.statementToCode(block, 'decompose') + "  }"
   }
   
   if (block.getFieldValue('functionAmnt') !== '0') {
   var arr = [];
   for (var i = 0; i < Number(block.getFieldValue('functionAmnt')); i++) {
-  arr.push("\n"+"FUNCNAME"+": function("+"VARNAMES"+") {\n\n}")
+  arr.push("\n"+"  FUNCNAME"+": function("+"VARNAMES"+") {\n  \n}")
   }
   extra_func = extra_func + "," + arr.join(',');
   }
   
-  var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\ninit: function(){\n" + statements_init + "  }" + extra_func + "\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) { return ''; };";
+  var code = safeText(text_block_name) + "\u001FBlockly.Blocks['" + safeText(text_block_name) + "'] = {\n  init: function(){\n" + statements_init + "  }" + extra_func + "\n};\u001FBlockly.JavaScript['" + safeText(text_block_name) + "'] = function(block) { return ''; };";
   return code;
 };
 
