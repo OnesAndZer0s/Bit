@@ -136,7 +136,7 @@ Blockly.JavaScript['workshop_block_description'] = function(block) {
   if (block.getFieldValue('functionAmnt') !== '0') {
   var arr = [];
   for (var i = 0; i < Number(block.getFieldValue('functionAmnt')); i++) {
-  arr.push("\n"+"  FUNCNAME"+": function("+"VARNAMES"+") {\n  \n}")
+  arr.push("\n"+"  FUNCNAME"+": function("+"VARNAMES"+") {\n\n  }")
   }
   extra_func = extra_func + "," + arr.join(',');
   }
