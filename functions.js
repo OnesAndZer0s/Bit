@@ -1,6 +1,6 @@
 function initBlockly(div,options,updateFunc){
-  var blocklyArea = document.getElementById(div);
-  var blocklyDiv = document.createElement('div');
+  var blocklyArea = div;
+  var blocklyDiv = div;
   blocklyDiv.style.position = "absolute";
   blocklyArea.appendChild(blocklyDiv);
   var workspace = Blockly.inject(blocklyDiv,options);
@@ -23,8 +23,6 @@ function initBlockly(div,options,updateFunc){
   onresize();
   Blockly.svgResize(workspace);
 var func = eval(updateFunc);
-console.log(func);
-console.log(updateFunc);
 workspace.addChangeListener(function(event) {
   var code = Blockly.JavaScript.workspaceToCode(workspace); if (func !== undefined) {func(code);}
 });
